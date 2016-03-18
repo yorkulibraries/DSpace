@@ -181,6 +181,15 @@
         <!-- <theme name="Test Theme 1" handle="123456789/1" path="theme1/"/>    -->
         <!-- <theme name="Test Theme 2" regex="community-list" path="theme2/"/> -->
 
+        <!-- Mirage theme for Antony's ETD -->
+        <theme name="Atmire Mirage Theme for Antony's ETD" handle="10315/20777" path="Antony/" />
+        <!-- Mirage theme for Photographs collection -->
+        <theme name="Atmire Mirage Theme for Photographs" handle="10315/1478" path="Photograph/" />
+        <!-- Mirage theme for ETD collection -->
+        <theme name="Atmire Mirage Theme for ETD" handle="10315/26310" path="ETD/" />
+        <!-- Standard Mirage theme for most collections -->
+        <theme name="York Standard Mirage Theme" regex=".*" path="Standard/" />
+
         <!-- Mirage theme, @mire contributed theme, default since DSpace 3.0 -->
         <theme name="Atmire Mirage Theme" regex=".*" path="Mirage/" />
 
@@ -197,14 +206,5 @@
              For information on configuring the mobile theme, see:
              dspace-xmlui/src/main/webapp/themes/mobile/readme.txt
         -->
-
-        <!-- Mirage theme for Antony's ETD -->
-        <theme name="Atmire Mirage Theme for Antony's ETD" handle="10315/20777" path="Antony/" />
-        <!-- Mirage theme for Photographs collection -->
-        <theme name="Atmire Mirage Theme for Photographs" handle="10315/1478" path="Photograph/" />
-        <!-- Mirage theme for ETD collection -->
-        <theme name="Atmire Mirage Theme for ETD" handle="10315/26310" path="ETD/" />
-        <!-- Standard Mirage theme for most collections -->
-        <theme name="York Standard Mirage Theme" regex=".*" path="Standard/" />
     </themes>
 </xmlui>

@@ -40,35 +40,20 @@
     <!-- A collection rendered in the summaryList pattern. Encountered on the community-list page -->
     <xsl:template name="collectionSummaryList-DIM">
         <xsl:variable name="data" select="./mets:dmdSec/mets:mdWrap/mets:xmlData/dim:dim"/>
-		<xsl:variable name="value" select="$data/dim:field[@element='title'][1]"/>
         <div class="artifact-description">
             <div class="artifact-title">
-			
                 <a href="{@OBJID}">
-                    <span class="Z3988">					
-                        <xsl:choose>						
+                    <span class="Z3988">
+                        <xsl:choose>
                             <xsl:when test="string-length($data/dim:field[@element='title'][1]) &gt; 0">
-								<xsl:choose>
-								<!--<xsl:when test="select='$value'='Drama Studies - &amp;tudes dramatiques'">-->
-								<xsl:when test="string($value) = 'Drama Studies - Etudes dramatiques'">
-									<xsl:text>Drama Studies - &#201;tudes dramatiques</xsl:text>
-								</xsl:when>
-								<xsl:when test="string($value) = 'Canadian Studies -- Etudes canadiennes'">
-									<xsl:text>Canadian Studies -- &#201;tudes canadiennes</xsl:text>
-								</xsl:when>
-								<xsl:otherwise>
-									<xsl:value-of select="$data/dim:field[@element='title'][1]"/>
-							  <!--<xsl:value-of select="$value"/>-->
-								</xsl:otherwise>
-								</xsl:choose> 
+                                <xsl:value-of select="$data/dim:field[@element='title'][1]"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <i18n:text>xmlui.dri2xhtml.METS-1.0.no-title</i18n:text>
-                            </xsl:otherwise> 
-                        </xsl:choose> 
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </span>
                 </a>
-			
                 <!--Display community strengths (item counts) if they exist-->
                 <xsl:if test="string-length($data/dim:field[@element='format'][@qualifier='extent'][1]) &gt; 0">
                     <xsl:text> [</xsl:text>

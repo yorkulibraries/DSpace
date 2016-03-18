@@ -41,40 +41,14 @@
         on the front page. -->
     <xsl:template name="communitySummaryList-DIM">
         <xsl:variable name="data" select="./mets:dmdSec/mets:mdWrap/mets:xmlData/dim:dim"/>
-		<xsl:variable name="value" select="$data/dim:field[@element='title'][1]"/>
         <div class="artifact-description">
             <div class="artifact-title">
                 <a href="{@OBJID}">
                     <span class="Z3988">
-                        <!--<xsl:choose>
+                        <xsl:choose>
                             <xsl:when test="string-length($data/dim:field[@element='title'][1]) &gt; 0">
                                 <xsl:value-of select="$data/dim:field[@element='title'][1]"/>
                             </xsl:when>
-                            <xsl:otherwise>
-                                <i18n:text>xmlui.dri2xhtml.METS-1.0.no-title</i18n:text>
-                            </xsl:otherwise>
-                        </xsl:choose>-->
-						<xsl:choose>
-                            <xsl:when test="string-length($data/dim:field[@element='title'][1]) &gt; 0">
-								<xsl:choose>
-									<xsl:when test="$value = 'Faculty of Graduate Studies'">
-										<xsl:value-of select="$value"/>
-										<br />									
-										<a href="{confman:getProperty('dspace.baseUrl')}{$context-path}/handle/10315/26310">
-											<ul>
-												<li>
-													<xsl:text>Electronic Theses and Dissertations (ETDs)</xsl:text>
-												</li>
-											</ul>
-										</a>									
-									</xsl:when>
-									<!--<xsl:when test="$value = 'Electronic Theses and Dissertations (ETDs)'">
-									</xsl:when>-->
-									<xsl:otherwise>
-										<xsl:value-of select="$data/dim:field[@element='title'][1]"/>
-									</xsl:otherwise>
-								</xsl:choose>
-                            </xsl:when>							
                             <xsl:otherwise>
                                 <i18n:text>xmlui.dri2xhtml.METS-1.0.no-title</i18n:text>
                             </xsl:otherwise>

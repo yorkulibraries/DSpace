@@ -31,48 +31,6 @@
 
     <xsl:output indent="yes"/>
 
-	<!--YDJ-->
-	<xsl:template match="dri:div" priority="1">		
-		<xsl:apply-templates select="dri:head"/>
-        <xsl:apply-templates select="@pagination">
-            <xsl:with-param name="position">top</xsl:with-param>
-        </xsl:apply-templates>
-		<xsl:variable name="itemDivision">
-                        <xsl:value-of select="@n"/>
-		</xsl:variable>
-		<xsl:if test="$itemDivision='item-view'">
-                    <xsl:call-template name="cc-license">
-                        <xsl:with-param name="metadataURL" select="./dri:referenceSet/dri:reference/@url"/>
-                    </xsl:call-template>
-		</xsl:if>
-        <div>
-            <xsl:call-template name="standardAttributes">
-                <xsl:with-param name="class">ds-static-div</xsl:with-param>
-            </xsl:call-template>
-            <xsl:choose>
-                    <!--  does this element have any children -->
-                        <xsl:when test="child::node()">
-                                <xsl:apply-templates select="*[not(name()='head')]"/>
-                    </xsl:when>
-                        <!-- if no children are found we add a space to eliminate self closing tags -->
-                        <xsl:otherwise>
-                                &#160;
-                        </xsl:otherwise>
-                </xsl:choose>
-        </div>
-                        <xsl:variable name="xrefTarget">
-                        <xsl:value-of select="./dri:p/dri:xref/@target"/>
-                </xsl:variable>
-                <xsl:if test="$itemDivision='item-view'">
-                    <xsl:call-template name="cc-license">
-                        <xsl:with-param name="metadataURL" select="./dri:referenceSet/dri:reference/@url"/>
-                    </xsl:call-template>
-                </xsl:if>
-        <xsl:apply-templates select="@pagination">
-            <xsl:with-param name="position">bottom</xsl:with-param>
-        </xsl:apply-templates>
-    </xsl:template>
-				
     <!--Removed the automatic font sizing for headers, because while I liked the idea,
      in practice it's too unpredictable.
      Also made all head's follow the same rule: count the number of ancestors that have

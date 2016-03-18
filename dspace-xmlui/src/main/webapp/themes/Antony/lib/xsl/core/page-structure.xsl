@@ -139,7 +139,7 @@
             initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
             maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
             -->
-            <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+            <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/>
 
             <link rel="shortcut icon">
                 <xsl:attribute name="href">
@@ -167,7 +167,7 @@
                 </xsl:if>
               </xsl:attribute>
             </meta>
-            <!-- Add stylsheets -->
+            <!-- Add stylesheets -->
             <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='stylesheet']">
                 <link rel="stylesheet" type="text/css">
                     <xsl:attribute name="media">
@@ -182,9 +182,6 @@
                     </xsl:attribute>
                 </link>
             </xsl:for-each>
-
-	     <!--YDJ Streaming Code -->
-		  <link rel="stylesheet" type="text/css" href="http://vjs.zencdn.net/4.6/video-js.css" />
 
             <!-- Add syndication feeds -->
             <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='feed']">
@@ -210,8 +207,7 @@
                         <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='request'][@qualifier='serverPort']"/>
                         <xsl:value-of select="$context-path"/>
                         <xsl:text>/</xsl:text>
-                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='opensearch'][@qualifier='context']"/>
-                        <xsl:text>description.xml</xsl:text>
+                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='opensearch'][@qualifier='autolink']"/>
                     </xsl:attribute>
                     <xsl:attribute name="title" >
                         <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='opensearch'][@qualifier='shortName']"/>
@@ -222,12 +218,12 @@
             <!-- The following javascript removes the default text of empty text areas when they are focused on or submitted -->
             <!-- There is also javascript to disable submitting a form when the 'enter' key is pressed. -->
                         <script type="text/javascript">
-                                //Clear default text of emty text areas on focus
+                                //Clear default text of empty text areas on focus
                                 function tFocus(element)
                                 {
                                         if (element.value == '<i18n:text>xmlui.dri2xhtml.default.textarea.value</i18n:text>'){element.value='';}
                                 }
-                                //Clear default text of emty text areas on submit
+                                //Clear default text of empty text areas on submit
                                 function tSubmit(form)
                                 {
                                         var defaultedElements = document.getElementsByTagName("textarea");
@@ -285,10 +281,6 @@
                     <xsl:text>/lib/js/modernizr-1.7.min.js</xsl:text>
                 </xsl:attribute>&#160;</script>
 
-	     <!--YDJ Streaming Code -->
-    	     <script type="text/javascript" src="http://vjs.zencdn.net/4.6/video.js"></script>
-	     <script type="text/javascript">$(document).ready(function(){});</script>
-
             <!-- Add the title in -->
             <xsl:variable name="page_title" select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='title']" />
             <title>
@@ -297,7 +289,10 @@
                                 <xsl:text>About This Repository</xsl:text>
                         </xsl:when>
                         <xsl:when test="not($page_title)">
-                                <xsl:text>  </xsl:text>
+                            <i18n:text>xmlui.dri2xhtml.METS-1.0.no-title</i18n:text>
+                        </xsl:when>
+                        <xsl:when test="$page_title = ''">
+                            <i18n:text>xmlui.dri2xhtml.METS-1.0.no-title</i18n:text>
                         </xsl:when>
                         <xsl:otherwise>
                                 <xsl:copy-of select="$page_title/node()" />
@@ -316,6 +311,24 @@
                 <meta name="{@element}" content="{.}"></meta>
             </xsl:for-each>
 
+            <!-- Add MathJAX JS library to render scientific formulas-->
+            <xsl:if test="confman:getProperty('webui.browse.render-scientific-formulas') = 'true'">
+                <script type="text/x-mathjax-config">
+                    MathJax.Hub.Config({
+                      tex2jax: {
+                        inlineMath: [['$','$'], ['\\(','\\)']],
+                        ignoreClass: "detail-field-data|detailtable|exception"
+                      },
+                      TeX: {
+                        Macros: {
+                          AA: '{\\mathring A}'
+                        }
+                      }
+                    });
+                </script>
+                <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">&#160;</script>
+            </xsl:if>
+
         </head>
     </xsl:template>
 
@@ -332,11 +345,13 @@
                         <xsl:text>/</xsl:text>
                     </xsl:attribute>
                     <span id="ds-header-logo">&#160;</span>
-                    <span id="ds-header-logo-text">mirage</span>
+                    <span id="ds-header-logo-text">
+                       <i18n:text>xmlui.dri2xhtml.structural.head-subtitle</i18n:text>
+                    </span>
                 </a>
                 <h1 class="pagetitle visuallyhidden">
                     <xsl:choose>
-                        <!-- protectiotion against an empty page title -->
+                        <!-- protection against an empty page title -->
                         <xsl:when test="not(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='title'])">
                             <xsl:text> </xsl:text>
                         </xsl:when>
@@ -347,10 +362,6 @@
                     </xsl:choose>
 
                 </h1>
-                <h2 class="static-pagetitle visuallyhidden">
-                    <i18n:text>xmlui.dri2xhtml.structural.head-subtitle</i18n:text>
-                </h2>
-
 
                 <xsl:choose>
                     <xsl:when test="/dri:document/dri:meta/dri:userMeta/@authenticated = 'yes'">
@@ -393,11 +404,12 @@
                         </div>
                     </xsl:otherwise>
                 </xsl:choose>
-
+                
+                <xsl:call-template name="languageSelection" />
+                
             </div>
         </div>
     </xsl:template>
-
 
     <!-- The header (distinct from the HTML head element) contains the title, subtitle, login box and various
         placeholders for header images -->
@@ -452,7 +464,7 @@
             </xsl:choose>
         </li>
     </xsl:template>
-     <!--YDJ-->
+
     <xsl:template name="cc-license">
         <xsl:param name="metadataURL"/>
         <xsl:variable name="externalMetadataURL">
@@ -482,30 +494,23 @@
         </xsl:variable>
 
    <xsl:if test="$ccLicenseName and $ccLicenseUri and contains($ccLicenseUri, 'creativecommons')">
-        <div about="{$handleUri}">
+        <div about="{$handleUri}" class="clearfix">
             <xsl:attribute name="style">
-                <xsl:text>margin:0em 2em 0em 2em; padding-bottom:1em;</xsl:text>
+                <xsl:text>margin:0em 2em 0em 2em; padding-bottom:0em;</xsl:text>
             </xsl:attribute>
             <a rel="license"
                 href="{$ccLicenseUri}"
                 alt="{$ccLicenseName}"
                 title="{$ccLicenseName}"
                 >
-                <img>
-                     <xsl:attribute name="src">
-                        <xsl:value-of select="concat($theme-path,'/images/cc-ship.gif')"/>
-                     </xsl:attribute>
-                     <xsl:attribute name="alt">
-                         <xsl:value-of select="$ccLicenseName"/>
-                     </xsl:attribute>
-                     <xsl:attribute name="style">
-                         <xsl:text>float:left; margin:0em 1em 0em 0em; border:none;</xsl:text>
-                     </xsl:attribute>
-                </img>
+                <xsl:call-template name="cc-logo">
+                    <xsl:with-param name="ccLicenseName" select="$ccLicenseName"/>
+                    <xsl:with-param name="ccLicenseUri" select="$ccLicenseUri"/>
+                </xsl:call-template>
             </a>
             <span>
                 <xsl:attribute name="style">
-                    <xsl:text>vertical-align:middle; text-indent:0 !important; font-weight: bold;</xsl:text>
+                    <xsl:text>vertical-align:middle; text-indent:0 !important;</xsl:text>
                 </xsl:attribute>
                 <i18n:text>xmlui.dri2xhtml.METS-1.0.cc-license-text</i18n:text>
                 <xsl:value-of select="$ccLicenseName"/>
@@ -514,12 +519,72 @@
         </xsl:if>
     </xsl:template>
 
-    <!-- Like the header, the footer contains various miscellanious text, links, and image placeholders -->
+    <xsl:template name="cc-logo">
+        <xsl:param name="ccLicenseName"/>
+        <xsl:param name="ccLicenseUri"/>
+        <xsl:variable name="ccLogo">
+             <xsl:choose>
+                  <xsl:when test="starts-with($ccLicenseUri,
+                                           'http://creativecommons.org/licenses/by/')">
+                       <xsl:value-of select="'cc-by.png'" />
+                  </xsl:when>
+                  <xsl:when test="starts-with($ccLicenseUri,
+                                           'http://creativecommons.org/licenses/by-sa/')">
+                       <xsl:value-of select="'cc-by-sa.png'" />
+                  </xsl:when>
+                  <xsl:when test="starts-with($ccLicenseUri,
+                                           'http://creativecommons.org/licenses/by-nd/')">
+                       <xsl:value-of select="'cc-by-nd.png'" />
+                  </xsl:when>
+                  <xsl:when test="starts-with($ccLicenseUri,
+                                           'http://creativecommons.org/licenses/by-nc/')">
+                       <xsl:value-of select="'cc-by-nc.png'" />
+                  </xsl:when>
+                  <xsl:when test="starts-with($ccLicenseUri,
+                                           'http://creativecommons.org/licenses/by-nc-sa/')">
+                       <xsl:value-of select="'cc-by-nc-sa.png'" />
+                  </xsl:when>
+                  <xsl:when test="starts-with($ccLicenseUri,
+                                           'http://creativecommons.org/licenses/by-nc-nd/')">
+                       <xsl:value-of select="'cc-by-nc-nd.png'" />
+                  </xsl:when>
+                  <xsl:when test="starts-with($ccLicenseUri,
+                                           'http://creativecommons.org/publicdomain/zero/')">
+                       <xsl:value-of select="'cc-zero.png'" />
+                  </xsl:when>
+                  <xsl:when test="starts-with($ccLicenseUri,
+                                           'http://creativecommons.org/publicdomain/mark/')">
+                       <xsl:value-of select="'cc-mark.png'" />
+                  </xsl:when>
+                  <xsl:otherwise>
+                       <xsl:value-of select="'cc-generic.png'" />
+                  </xsl:otherwise>
+             </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="ccLogoImgSrc">
+            <xsl:value-of select="$theme-path"/>
+            <xsl:text>/images/creativecommons/</xsl:text>
+            <xsl:value-of select="$ccLogo"/>
+        </xsl:variable>
+        <img>
+             <xsl:attribute name="src">
+                <xsl:value-of select="$ccLogoImgSrc"/>
+             </xsl:attribute>
+             <xsl:attribute name="alt">
+                 <xsl:value-of select="$ccLicenseName"/>
+             </xsl:attribute>
+             <xsl:attribute name="style">
+                 <xsl:text>float:left; margin:0em 1em 0em 0em; border:none;</xsl:text>
+             </xsl:attribute>
+        </img>
+    </xsl:template>
+
+    <!-- Like the header, the footer contains various miscellaneous text, links, and image placeholders -->
     <xsl:template name="buildFooter">
         <div id="ds-footer-wrapper">
             <div id="ds-footer">
                 <div id="ds-footer-left">
-                    <a href="http://www.dspace.org/" target="_blank">DSpace software</a> copyright&#160;&#169;&#160;2002-2011&#160; <a href="http://www.duraspace.org/" target="_blank">Duraspace</a>
+                    <a href="http://www.dspace.org/" target="_blank">DSpace software</a> copyright&#160;&#169;&#160;2002-2015&#160; <a href="http://www.duraspace.org/" target="_blank">DuraSpace</a>
                 </div>
                 <div id="ds-footer-right">
                     <span class="theme-by">Theme by&#160;</span>
@@ -545,10 +610,6 @@
                         </xsl:attribute>
                         <i18n:text>xmlui.dri2xhtml.structural.feedback-link</i18n:text>
                     </a>
-                </div>
-		  <!--YDJ-->
-		  <div id="ds-footer-left">
-                    All items in the YorkSpace institutional repository are protected by copyright, with all rights reserved except where explicitly noted.
                 </div>
                 <!--Invisible link to HTML sitemap (for search engines) -->
                 <a class="hidden">
@@ -625,17 +686,7 @@
             <xsl:text>1.6.2</xsl:text>
         </xsl:variable>
 
-        <xsl:variable name="protocol">
-            <xsl:choose>
-                <xsl:when test="starts-with(confman:getProperty('dspace.baseUrl'), 'https://')">
-                    <xsl:text>https://</xsl:text>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:text>http://</xsl:text>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-        <script type="text/javascript" src="{concat($protocol, 'ajax.googleapis.com/ajax/libs/jquery/', $jqueryVersion ,'/jquery.min.js')}">&#160;</script>
+        <script type="text/javascript" src="{concat($scheme, 'ajax.googleapis.com/ajax/libs/jquery/', $jqueryVersion ,'/jquery.min.js')}">&#160;</script>
 
         <xsl:variable name="localJQuerySrc">
                 <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
@@ -652,6 +703,13 @@
 
 
         <!-- Add theme javascipt  -->
+        <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='javascript'][@qualifier='url']">
+            <script type="text/javascript">
+                <xsl:attribute name="src">
+                    <xsl:value-of select="."/>
+                </xsl:attribute>&#160;</script>
+        </xsl:for-each>
+
         <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='javascript'][not(@qualifier)]">
             <script type="text/javascript">
                 <xsl:attribute name="src">
@@ -663,7 +721,7 @@
                 </xsl:attribute>&#160;</script>
         </xsl:for-each>
 
-        <!-- add "shared" javascript from static, path is relative to webapp root-->
+        <!-- add "shared" javascript from static, path is relative to webapp root -->
         <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='javascript'][@qualifier='static']">
             <!--This is a dirty way of keeping the scriptaculous stuff from choice-support
             out of our theme without modifying the administrative and submission sitemaps.
@@ -718,21 +776,78 @@
         <!-- Add a google analytics script if the key is present -->
         <xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='google'][@qualifier='analytics']">
             <script type="text/javascript"><xsl:text>
-                   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                   var _gaq = _gaq || [];
+                   _gaq.push(['_setAccount', '</xsl:text><xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='google'][@qualifier='analytics']"/><xsl:text>']);
+                   _gaq.push(['_trackPageview']);
 
-
-   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
-Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-
-
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-
-
-   ga('create', '</xsl:text><xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='google'][@qualifier='analytics']"/><xsl:text>', 'auto');
-   ga('send', 'pageview');           </xsl:text></script>
+                   (function() {
+                       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                   })();
+           </xsl:text></script>
         </xsl:if>
+
+        <!-- Add a contextpath to a JS variable -->
+                <script type="text/javascript"><xsl:text>
+                         if(typeof window.orcid === 'undefined'){
+                            window.orcid={};
+                          };
+                        window.orcid.contextPath= '</xsl:text><xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/><xsl:text>';</xsl:text>
+                    <xsl:text>window.orcid.themePath= '</xsl:text><xsl:value-of select="$theme-path"/><xsl:text>';</xsl:text>
+                </script>
+
+    </xsl:template>
+    
+    <!-- Display language selection if more than 1 language is supported (overides buggy dir2xhtml-alt). 
+    Uses a page metadata curRequestURI which was introduced by in /xmlui/src/main/webapp/themes/Mirage/sitemap.xmap-->
+    <xsl:template name="languageSelection">
+        <xsl:variable name="curRequestURI">
+            <xsl:value-of select="substring-after(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='curRequestURI'],/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='request'][@qualifier='URI'])"/>
+        </xsl:variable>
+        <xsl:if test="count(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='supportedLocale']) &gt; 1">
+            <div id="ds-language-selection">
+                <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='supportedLocale']">
+                    <xsl:variable name="locale" select="."/>
+                    <a>
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="$curRequestURI"/>
+                            <xsl:call-template name="getLanguageURL"/>
+                            <xsl:value-of select="$locale"/>
+                        </xsl:attribute>
+                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='supportedLocale'][@qualifier=$locale]"/>
+                    </a>
+                </xsl:for-each>
+            </div>
+        </xsl:if>
+    </xsl:template>
+    <!-- Builds the Query String part of the language URL. If there allready is an excisting query string 
+    like: ?filtertype=subject&filter_relational_operator=equals&filter=keyword1 it appends the locale parameter with the ampersand (&) symbol -->
+    <xsl:template name="getLanguageURL">
+        <xsl:variable name="queryString" select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='request'][@qualifier='queryString']"/>
+        <xsl:choose>
+            <!-- There allready is a query string so append it and the language argument -->
+            <xsl:when test="$queryString != ''">
+                <xsl:text>?</xsl:text>
+                <xsl:choose>
+                    <xsl:when test="contains($queryString, '&amp;locale-attribute')">
+                        <xsl:value-of select="substring-before($queryString, '&amp;locale-attribute')"/>
+                        <xsl:text>&amp;locale-attribute=</xsl:text>
+                    </xsl:when>
+                    <!-- the query string is only the locale-attribute so remove it to append the correct one -->
+                    <xsl:when test="starts-with($queryString, 'locale-attribute')">
+                        <xsl:text>locale-attribute=</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="$queryString"/>
+                        <xsl:text>&amp;locale-attribute=</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>?locale-attribute=</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
 </xsl:stylesheet>

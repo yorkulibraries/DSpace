@@ -102,6 +102,12 @@
                   <xsl:with-param name="confIndicator" select="$confidenceIndicatorID"/>
                 </xsl:call-template>
               </xsl:when>
+                <xsl:when test="dri:params/@choicesPresentation = 'authorLookup'">
+                    <xsl:call-template name="addLookupButtonAuthor">
+                        <xsl:with-param name="isName" select="'true'"/>
+                        <xsl:with-param name="confIndicator" select="$confidenceIndicatorID"/>
+                    </xsl:call-template>
+                </xsl:when>
             </xsl:choose>
             <xsl:if test="dri:params/@authorityControlled">
               <xsl:variable name="confValue" select="dri:field/dri:value[@type='authority'][1]/@confidence"/>
@@ -121,7 +127,7 @@
         </div>
     </xsl:template>
 
-    <!-- The hadling of the special case of instanced composite fields under "form" lists -->
+    <!-- The handling of the special case of instanced composite fields under "form" lists -->
     <xsl:template match="dri:field[@type='composite'][dri:field/dri:instance | dri:params/@operations]" mode="formComposite" priority="2">
         <xsl:variable name="confidenceIndicatorID" select="concat(translate(@id,'.','_'),'_confidence_indicator')"/>
         <div class="ds-form-content">
@@ -135,7 +141,7 @@
                     <xsl:attribute name="style">
                       <xsl:text>display:none;</xsl:text>
                     </xsl:attribute>
-            </xsl:if>
+                    </xsl:if>
                </input>
             </xsl:if>
             <!-- insert choice mechansim and/or Add button here -->
@@ -152,6 +158,12 @@
                   <xsl:with-param name="confIndicator" select="$confidenceIndicatorID"/>
                 </xsl:call-template>
               </xsl:when>
+                <xsl:when test="dri:params/@choicesPresentation = 'authorLookup'">
+                    <xsl:call-template name="addLookupButtonAuthor">
+                        <xsl:with-param name="isName" select="'true'"/>
+                        <xsl:with-param name="confIndicator" select="$confidenceIndicatorID"/>
+                    </xsl:call-template>
+                </xsl:when>
             </xsl:choose>
             <!-- place to store authority value -->
             <xsl:if test="dri:params/@authorityControlled">
@@ -207,6 +219,11 @@
                         <xsl:text>display:none;</xsl:text>
                     </xsl:attribute>
                 </xsl:if>
+                <xsl:if test="dri:params/@choicesPresentation = 'authorLookup'">
+                    <xsl:attribute name="style">
+                        <xsl:text>display:none;</xsl:text>
+                    </xsl:attribute>
+                </xsl:if>
             </input>
         </xsl:if>
         <xsl:if test="$test">
@@ -243,7 +260,7 @@
                 <xsl:if test="@disabled='yes'">
                     <xsl:text>disabled </xsl:text>
                 </xsl:if>
-                <xsl:if test="dri:error">
+                <xsl:if test="dri:error or parent::node()[@type='composite']/dri:error">
                     <xsl:text>error </xsl:text>
                 </xsl:if>
                 <xsl:if test="dri:params/@multiple='yes'">
@@ -281,7 +298,12 @@
                 <xsl:attribute name="style">
                   <xsl:text>display:none;</xsl:text>
                 </xsl:attribute>
-        </xsl:if>
+               </xsl:if>
+                <xsl:if test="dri:params/@choicesPresentation = 'authorLookup'">
+                    <xsl:attribute name="style">
+                        <xsl:text>display:none;</xsl:text>
+                    </xsl:attribute>
+                </xsl:if>
            </input>
         </xsl:if>
         <br/>

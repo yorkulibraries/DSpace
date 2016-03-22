@@ -24,10 +24,10 @@
 		-->
 
 	<!-- General keys -->
-	<message key="xmlui.general.dspace_home">DSpace Home</message>
+	<message key="xmlui.general.dspace_home">YorkSpace Home</message>
 	<message key="xmlui.general.search">Search</message>
 	<message key="xmlui.general.go">Go</message>
-	<message key="xmlui.general.go_home">Go to DSpace home</message>
+	<message key="xmlui.general.go_home">Go to YorkSpace home</message>
 	<message key="xmlui.general.save">Save</message>
 	<message key="xmlui.general.cancel">Cancel</message>
 	<message key="xmlui.general.return">Return</message>
@@ -65,10 +65,10 @@
 	<!--
 		This section is for feed syndications (RSS, atom, etc)
 	-->
-	<message key="xmlui.feed.general_description">The DSpace digital repository system captures, stores, indexes, preserves, and distributes digital research material.</message>
+	<message key="xmlui.feed.general_description">The YorkSpace digital repository system captures, stores, indexes, preserves, and distributes digital research material.</message>
     <message key="xmlui.feed.header">RSS Feeds</message>
 	<message key="xmlui.feed.logo_title">The Channel Image</message>
-	<message key="xmlui.feed.untitled">Untitled</message>
+	<message key="xmlui.feed.untitled">Untitled</message>	
 
 	<!--
 		Default notice header
@@ -82,6 +82,29 @@
 		             ArtifactBrowser Aspect
 
 		!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<!-- org.dspace.app.xmlui.artifactbrowser.About.java -->
+	<message key="xmlui.ArtifactBrowser.About.title">What Is YorkSpace?</message>
+	<message key="xmlui.ArtifactBrowser.About.trail">What Is YorkSpace?</message>
+	
+	<!-- org.dspace.app.xmlui.artifactbrowser.Contribute.java -->
+	<message key="xmlui.ArtifactBrowser.Contribute.title">Why Contribute?</message>
+	<message key="xmlui.ArtifactBrowser.Contribute.trail">Why Contribute?</message>
+	
+	<!-- org.dspace.app.xmlui.artifactbrowser.Content.java -->
+	<message key="xmlui.ArtifactBrowser.Content.title">Content Guidelines</message>
+	<message key="xmlui.ArtifactBrowser.Content.trail">Content Guidelines</message>
+	
+	<!-- org.dspace.app.xmlui.artifactbrowser.Withdrawal.java -->
+	<message key="xmlui.ArtifactBrowser.Withdrawal.title">Withdrawal Policy</message>
+	<message key="xmlui.ArtifactBrowser.Withdrawal.trail">Withdrawal Policy</message>
+	
+	<!-- org.dspace.app.xmlui.artifactbrowser.Community.java -->
+	<message key="xmlui.ArtifactBrowser.Community.title">Community Policy</message>
+	<message key="xmlui.ArtifactBrowser.Community.trail">Community Policy</message>
+	
+	<!-- org.dspace.app.xmlui.artifactbrowser.FAQ.java -->
+	<message key="xmlui.ArtifactBrowser.FAQ.title">FAQs</message>
+	<message key="xmlui.ArtifactBrowser.FAQ.trail">FAQs</message>	
 
 
 
@@ -97,7 +120,7 @@
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.head2">Communities or Collections matching your query</message>
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.head3">Items matching your query</message>
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.no_results">Search produced no results.</message>
-	<message key="xmlui.ArtifactBrowser.AbstractSearch.all_of_dspace">All of DSpace</message>
+	<message key="xmlui.ArtifactBrowser.AbstractSearch.all_of_dspace">All of YorkSpace</message>
 
    <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.title">title</message>
    <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dateissued">issue date</message>
@@ -143,6 +166,14 @@
    <message key="xmlui.ArtifactBrowser.AdvancedSearch.or">OR</message>
    <message key="xmlui.ArtifactBrowser.AdvancedSearch.not">NOT</message>
 
+ <message key="xmlui.ArtifactBrowser.AdvancedSearch.format_application">Document (pdf, doc, etc.)</message>
+   <message key="xmlui.ArtifactBrowser.AdvancedSearch.format_text">Text (txt, html, etc.)</message>
+   <message key="xmlui.ArtifactBrowser.AdvancedSearch.format_image">Image</message>
+   <message key="xmlui.ArtifactBrowser.AdvancedSearch.format_audio">Audio</message>
+   <message key="xmlui.ArtifactBrowser.AdvancedSearch.format_video">Video</message>
+   <message key="xmlui.ArtifactBrowser.AdvancedSearch.format_all">ALL</message>
+   <message key="xmlui.ArtifactBrowser.AdvancedSearch.search_format">Format type</message>
+
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.ConfigureableBrowse.java -->
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.starts_with">Or enter first few letters:</message>
@@ -169,9 +200,24 @@
 
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.author.column_heading">Authors Name</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.subject.column_heading">Subject</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.series.column_heading">Series</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.relation.column_heading">Fonds</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.mime.column_heading">Format</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.city.column_heading">City</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.county.column_heading">County</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.region.column_heading">Region</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.supervisor.column_heading">Supervisor</message>
 
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.author">Browsing {0} by Author {1}</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.author">Browsing {0} by Author</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.series">Browsing {0} by Series {1}</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.series">Browsing {0} by Series</message>
+
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.relation">Browsing {0} by Fonds {1}</message>
+    <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.relation">Browsing {0} by Fonds</message>	
+	
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.mime">Browsing {0} by Format {1}</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.mime">Browsing {0} by Format</message>
 
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.subject">Browsing {0} by Subject {1}</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.subject">Browsing {0} by Subject</message>
@@ -185,6 +231,14 @@
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.item.dateaccessioned">Browsing {0} by Submit Date {1}</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.item.dateaccessioned">Browsing {0} by Submit Date</message>
 
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.city">Browsing {0} by City {1}</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.city">Browsing {0} by City</message>
+	
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.county">Browsing {0} by County {1}</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.county">Browsing {0} by County</message>
+
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.region">Browsing {0} by Region {1}</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.region">Browsing {0} by Region</message>
 
 	<!-- org.dspace.app.xmlui.administrative.WithdrawnItems.java -->
 	<message key="xmlui.Administrative.WithdrawnItems.title.item.title">Withdrawn Items by Title</message>
@@ -192,6 +246,9 @@
 
 	<message key="xmlui.Administrative.WithdrawnItems.title.item.dateissued">Withdrawn Items by Issue Date</message>
 	<message key="xmlui.Administrative.WithdrawnItems.trail.item.dateissued">Withdrawn Items by Issue Date</message>
+
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.supervisor">Browsing {0} by Supervisor {1}</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.supervisor">Browsing {0} by Supervisor</message>
 
 	<message key="xmlui.Administrative.WithdrawnItems.title.item.dateaccessioned">Withdrawn Items by Submit Date</message>
 	<message key="xmlui.Administrative.WithdrawnItems.trail.item.dateaccessioned">Withdrawn Items by Submit Date</message>
@@ -208,29 +265,35 @@
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.CollectionViewer.java -->
 	<message key="xmlui.ArtifactBrowser.CollectionViewer.search_scope">Search Scope</message>
-	<message key="xmlui.ArtifactBrowser.CollectionViewer.all_of_dspace">All of DSpace</message>
-	<message key="xmlui.ArtifactBrowser.CollectionViewer.full_text_search">Search within this collection:</message>
-	<message key="xmlui.ArtifactBrowser.CollectionViewer.head_browse">Browse by</message>
+	<message key="xmlui.ArtifactBrowser.CollectionViewer.all_of_dspace">All of YorkSpace</message>
+	<message key="xmlui.ArtifactBrowser.CollectionViewer.full_text_search">Full Text Search:</message>
+	<message key="xmlui.ArtifactBrowser.CollectionViewer.head_browse">Browse by:</message>
 	<message key="xmlui.ArtifactBrowser.CollectionViewer.browse_titles">Titles</message>
+	<message key="xmlui.ArtifactBrowser.CollectionViewer.browse_subject">Subject</message>
 	<message key="xmlui.ArtifactBrowser.CollectionViewer.browse_authors">Authors</message>
 	<message key="xmlui.ArtifactBrowser.CollectionViewer.browse_dates">Dates</message>
+	<message key="xmlui.ArtifactBrowser.CollectionViewer.browse_format">Format</message>
+	<message key="xmlui.ArtifactBrowser.CollectionViewer.browse_series">Series</message>
 	<message key="xmlui.ArtifactBrowser.CollectionViewer.advanced_search_link">Advanced Search</message>
 	<message key="xmlui.ArtifactBrowser.CollectionViewer.head_recent_submissions">Recent Submissions</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.CommunityBrowser.java -->
 	<message key="xmlui.ArtifactBrowser.CommunityBrowser.title">Community List</message>
 	<message key="xmlui.ArtifactBrowser.CommunityBrowser.trail">Community List</message>
-	<message key="xmlui.ArtifactBrowser.CommunityBrowser.head">Communities in DSpace</message>
+	<message key="xmlui.ArtifactBrowser.CommunityBrowser.head">Communities in YorkSpace</message>
 	<message key="xmlui.ArtifactBrowser.CommunityBrowser.select">Select a community to browse its collections.</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.CommunityViewer.java -->
 	<message key="xmlui.ArtifactBrowser.CommunityViewer.search_scope">Search Scope</message>
 	<message key="xmlui.ArtifactBrowser.CommunityViewer.all_of_dspace">All of DSpace</message>
-	<message key="xmlui.ArtifactBrowser.CommunityViewer.full_text_search">Search within this community and its collections:</message>
-	<message key="xmlui.ArtifactBrowser.CommunityViewer.head_browse">Browse by</message>
+	<message key="xmlui.ArtifactBrowser.CommunityViewer.full_text_search">Full Text Search:</message>
+	<message key="xmlui.ArtifactBrowser.CommunityViewer.head_browse">Browse by:</message>
 	<message key="xmlui.ArtifactBrowser.CommunityViewer.browse_titles">Titles</message>
+		<message key="xmlui.ArtifactBrowser.CommunityViewer.browse_subject">Subject</message>
 	<message key="xmlui.ArtifactBrowser.CommunityViewer.browse_authors">Authors</message>
 	<message key="xmlui.ArtifactBrowser.CommunityViewer.browse_dates">Dates</message>
+		<message key="xmlui.ArtifactBrowser.CommunityViewer.browse_format">Format</message>
+	<message key="xmlui.ArtifactBrowser.CommunityViewer.browse_series">Series</message>
 	<message key="xmlui.ArtifactBrowser.CommunityViewer.advanced_search_link">Advanced Search</message>
 	<message key="xmlui.ArtifactBrowser.CommunityViewer.head_sub_communities">Sub-communities within this community</message>
 	<message key="xmlui.ArtifactBrowser.CommunityViewer.head_sub_collections">Collections in this community</message>
@@ -250,7 +313,7 @@
 	<message key="xmlui.ArtifactBrowser.FeedbackForm.title">Give feedback</message>
 	<message key="xmlui.ArtifactBrowser.FeedbackForm.trail">Give feedback</message>
 	<message key="xmlui.ArtifactBrowser.FeedbackForm.head">Give feedback</message>
-	<message key="xmlui.ArtifactBrowser.FeedbackForm.para1">Thanks for sharing your feedback about the DSpace system. Your comments are appreciated!</message>
+	<message key="xmlui.ArtifactBrowser.FeedbackForm.para1">Thanks for sharing your feedback about the YorkSpace system. Your comments are appreciated!</message>
 	<message key="xmlui.ArtifactBrowser.FeedbackForm.email">Your Email</message>
 	<message key="xmlui.ArtifactBrowser.FeedbackForm.email_help">This address will be used to follow up on your feedback.</message>
 	<message key="xmlui.ArtifactBrowser.FeedbackForm.comments">Comments</message>
@@ -262,6 +325,9 @@
 	<message key="xmlui.ArtifactBrowser.FeedbackSent.head">Feedback sent</message>
 	<message key="xmlui.ArtifactBrowser.FeedbackSent.para1">Your comments have been received.</message>
 
+	<message key="xmlui.ArtifactBrowser.FrontPageSearch.head">Search YorkSpace</message>
+	<message key="xmlui.ArtifactBrowser.FrontPageSearch.para1">Enter some text in the box below to search YorkSpace.</message>
+
 	<!-- org.dspace.app.xmlui.artifactbrowser.ItemViewer.java -->
 	<message key="xmlui.ArtifactBrowser.ItemViewer.trail">View Item</message>
 	<message key="xmlui.ArtifactBrowser.ItemViewer.head_parent_collections">This item appears in the following Collection(s)</message>
@@ -272,7 +338,7 @@
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.Navigation.java -->
 	<message key="xmlui.ArtifactBrowser.Navigation.head_browse">Browse</message>
-	<message key="xmlui.ArtifactBrowser.Navigation.head_all_of_dspace">All of DSpace</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.head_all_of_dspace">All of YorkSpace</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.communities_and_collections">Communities &amp; Collections</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.browse_title">Titles</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.browse_author">Authors</message>
@@ -281,6 +347,13 @@
 	<message key="xmlui.ArtifactBrowser.Navigation.browse_dateaccessioned">By Submit Date</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.head_this_collection">This Collection</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.head_this_community">This Community</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_series">Series</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_mime">Format</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_relation">Fonds</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_city">City</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_county">County</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_region">Region</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_supervisor">Supervisor</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.SimpleSearch.java -->
 	<message key="xmlui.ArtifactBrowser.SimpleSearch.title">Search</message>
@@ -570,7 +643,7 @@
 	<!-- org.dspace.app.xmlui.eperson.RegistrationFinished.java -->
 	<message key="xmlui.EPerson.RegistrationFinished.title">Registration finished</message>
 	<message key="xmlui.EPerson.RegistrationFinished.head">Registration Finished</message>
-	<message key="xmlui.EPerson.RegistrationFinished.para1">You're now registered to use the DSpace system.  You can subscribe to collections to receive email updates about new items.</message>
+	<message key="xmlui.EPerson.RegistrationFinished.para1">You're now registered to use the DSpace system.  You can subscribe to collections to receive email updates about new items. In order to deposit materials into YorkSpace, your account needs to be assigned privileges for your academic department. To get these privileges setup, or if you need any additional help with your account, please contact the YorkSpace team at diginit@yorku.ca.</message>
 
 	<!-- org.dspace.app.xmlui.eperson.ResetPassword.java -->
 	<message key="xmlui.EPerson.ResetPassword.title">Reset password</message>
@@ -608,7 +681,7 @@
 	<!-- org.dspace.app.xmlui.eperson.VerifyEmail.java -->
 	<message key="xmlui.EPerson.VerifyEmail.title">Verification email sent</message>
 	<message key="xmlui.EPerson.VerifyEmail.head">Verification email sent</message>
-	<message key="xmlui.EPerson.VerifyEmail.para">An email has been sent to {0} containing a special URL and further instructions.</message>
+	<message key="xmlui.EPerson.VerifyEmail.para">An email has been sent to {0} containing a special URL and further instructions. In order to deposit materials into YorkSpace, your account needs to be assigned privileges for your academic department. To get these privileges setup, or if you need any additional help with your account, please contact the YorkSpace team at diginit@yorku.ca.</message>
 
 
 
@@ -707,7 +780,7 @@
 	<message key="xmlui.Submission.Submissions.status_unknown">Unknown state</message>
         <!-- Same transformer, completed submissions section -->
         <message key="xmlui.Submission.Submissions.completed.head">Archived Submissions</message>
-        <message key="xmlui.Submission.Submissions.completed.info">These are your completed submissions which have been accepted into DSpace.</message>
+        <message key="xmlui.Submission.Submissions.completed.info">These are your completed submissions which have been accepted into YorkSpace.</message>
         <message key="xmlui.Submission.Submissions.completed.column1">Date accepted</message>
         <message key="xmlui.Submission.Submissions.completed.column2">Title</message>
         <message key="xmlui.Submission.Submissions.completed.column3">Collection</message>
@@ -912,8 +985,8 @@
 
 	<!-- org.dspace.app.xmlui.Submission.submit.CCLicenseStep -->
         <message key="xmlui.Submission.submit.CCLicenseStep.ccws_error">An error occurred ... {0}</message>
-        <message key="xmlui.Submission.submit.CCLicenseStep.head">License Your Work</message>
-        <message key="xmlui.Submission.submit.CCLicenseStep.info1">If you wish, you may add a <a href="http://creativecommons.org/">Creative Commons</a> License to your item. <strong>Creative Commons licenses govern what people who read your work may then do with it.</strong></message>
+        <message key="xmlui.Submission.submit.CCLicenseStep.head">Creative Commons License</message>
+        <message key="xmlui.Submission.submit.CCLicenseStep.info1">If you wish, you may add a <a href="http://creativecommons.org/">Creative Commons</a> License to your item. <strong>Creative Commons licenses govern what people who read your work may then do with it.</strong>If you wish to select a Creative Commons license click the button below.</message>
         <message key="xmlui.Submission.submit.CCLicenseStep.submit_choose_creative_commons">Choose a license</message>
         <message key="xmlui.Submission.submit.CCLicenseStep.submit_to_creative_commons">Proceed to Creative Commons website to select a license</message>
         <message key="xmlui.Submission.submit.CCLicenseStep.license">License Type</message>
@@ -1966,7 +2039,7 @@
 	<message key="xmlui.administrative.ControlPanel.trail">Control panel</message>
 	<message key="xmlui.administrative.ControlPanel.head">Control Panel</message>
 	<message key="xmlui.administrative.ControlPanel.option_java">Java Information</message>
-	<message key="xmlui.administrative.ControlPanel.option_dspace">DSpace Configuration</message>
+	<message key="xmlui.administrative.ControlPanel.option_dspace">YorkSpace Configuration</message>
 	<message key="xmlui.administrative.ControlPanel.option_alerts">System-wide Alerts</message>
 	<message key="xmlui.administrative.ControlPanel.hours">{0} h</message>
 	<message key="xmlui.administrative.ControlPanel.minutes">{0} m</message>
@@ -2075,7 +2148,7 @@
     <message key="xmlui.statistics.search.no-results">No search statistics available for the selected period.</message>
     <message key="xmlui.statistics.workflow.title">Workflow Statistics</message>
     <message key="xmlui.statistics.visits.total">Total Visits</message>
-    <message key="xmlui.statistics.visits.month">Total Visits Per Month</message>
+    <message key="xmlui.statistics.visits.month">Total Visits Per Month (7 months only)</message>
     <message key="xmlui.statistics.visits.views">Views</message>
     <message key="xmlui.statistics.visits.countries">Top country views</message>
     <message key="xmlui.statistics.visits.cities">Top cities views</message>
@@ -2180,8 +2253,8 @@
 	<message key="xmlui.dri2xhtml.structural.profile">Profile: </message>
 	<message key="xmlui.dri2xhtml.structural.logout">Logout</message>
 	<message key="xmlui.dri2xhtml.structural.login">Login</message>
-
-	<message key="xmlui.dri2xhtml.structural.search">Search DSpace</message>
+	<message key="xmlui.dri2xhtml.structural.about">About YorkSpace</message>
+	<message key="xmlui.dri2xhtml.structural.search">Search YorkSpace</message>
 	<message key="xmlui.dri2xhtml.structural.search-advanced">Advanced Search</message>
 	<message key="xmlui.dri2xhtml.structural.search-in-community">This Community</message>
 	<message key="xmlui.dri2xhtml.structural.search-in-collection">This Collection</message>
@@ -2192,6 +2265,14 @@
 
 	<message key="xmlui.dri2xhtml.structural.link_cc">Creative Commons</message>
 	<message key="xmlui.dri2xhtml.structural.link_original_license">Original License</message>
+	<message key="xmlui.dri2xhtml.structural.homepage">
+	<h1 class="ds-div-head">A Fresh View</h1>
+	<p>YorkSpace has been redesigned to not only better showcase our communities and collections, but to make finding them easier. With new features and improvements throughout, we hope that our collections can better facilitate your scholarly research.<br /><br /></p>
+        <h1 class="ds-div-head">Featured Collection</h1>
+        <p><a href="http://pi.library.yorku.ca/dspace/handle/10315/581"><img src="/dspace/themes/YorkSpace/featuredcollection.jpg" border="0" /></a><br /><b>York's 50th Anniversary Photography Collection</b><br /><br />Innovation is a hallmark of York, and this tradition is continued in the use of YorkSpace, a collection management software for digital content, to share more than 200 images of the university's development over more than four decades.
+        </p>
+        <p><a href="http://pi.library.yorku.ca/dspace/handle/10315/581">York's Photography Collection</a></p>
+        </message>
 
 
 	<!-- DS-METS-1.0-MODS.xsl -->
@@ -2211,11 +2292,32 @@
 	<message key="xmlui.dri2xhtml.METS-1.0.item-title">Title</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-author">Author</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-abstract">Abstract</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-identifier">Identifier</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-description">Description</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-description-local">Location Description</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-uri">URI</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-date">Date</message>
-	<message key="xmlui.dri2xhtml.METS-1.0.item-publisher">Publisher</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-publisher">Published</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-subject">Subject</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-citation">Citation</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-rights">Rights</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-sponsorship">Sponsor</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-type">Type</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-issn">ISSN</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-isbn">ISBN</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-coverage-y">Latitude</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-coverage-x">Longitude</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-coverage-city">Municipality</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-coverage-county">Regional Municipality</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-coverage-conserva">Conservation Authority</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-ispartofseries">Series</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-supervisor">Supervisor</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-degree">Degree</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-program">Program</message>       
+    <message key="xmlui.dri2xhtml.METS-1.0.item-format">Format</message>
+    <message key="xmlui.dri2xhtml.METS-1.0.item-relation">Relation</message>
+    <message key="xmlui.dri2xhtml.METS-1.0.item-relation-isformatof">View all images</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-relation-mapsuri">View photo location</message>
 
 	<message key="xmlui.dri2xhtml.METS-1.0.item-files-head">Files in this item</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-files-file">Files</message>
@@ -2346,6 +2448,9 @@
   <message key="xmlui.dri2xhtml.mimetype.video/mpeg2">MPEG-2 video</message>
   <message key="xmlui.dri2xhtml.mimetype.video/mp4">MPEG-4 video</message>
   <message key="xmlui.dri2xhtml.mimetype.video/quicktime">QuickTime video</message>
+  <!-- YDJ -->
+  <message key="xmlui.dri2xhtml.mimetype.video/x-ms-wmv">WMV video</message>
+  <message key="xmlui.dri2xhtml.mimetype.application/vnd.google-earth.kmz">KMZ file</message>
 
   <!-- explanatory messages for choice authority confidence values -->
   <message key="xmlui.authority.confidence.description.cf_unset">Confidence was never recorded for this value</message>

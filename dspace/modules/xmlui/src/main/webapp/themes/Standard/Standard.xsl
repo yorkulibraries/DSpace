@@ -27,7 +27,10 @@
 	exclude-result-prefixes="i18n dri mets xlink xsl dim xhtml mods dc">
 
     <xsl:import href="../Mirage/Mirage.xsl"/>
+    <xsl:import href="lib/xsl/core/navigation.xsl"/>
+    <xsl:import href="lib/xsl/aspect/artifactbrowser/item-list.xsl"/>
+    <xsl:import href="lib/xsl/aspect/artifactbrowser/item-view.xsl"/>
+    <xsl:import href="lib/xsl/aspect/artifactbrowser/community-list.xsl"/>
     <xsl:output indent="yes"/>
     
-
 </xsl:stylesheet>

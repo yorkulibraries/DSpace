@@ -2,8 +2,9 @@
 <document xmlns="http://di.tamu.edu/DRI/1.0/" xmlns:i18n="http://apache.org/cocoon/i18n/2.1" version="1.1">
 <body>
 <div id="file.news.div.news" n="news" rend="primary">
-<head>DSpace Repository</head>
-<p>DSpace is a digital service that collects, preserves, and distributes digital material. Repositories are important tools for preserving an organization&apos;s legacy; they facilitate digital preservation and scholarly communication.</p>
+<head>Welcome to YorkSpace</head>
+<p>YorkSpace is York University's Institutional Repository. It is a platform that enables York community members to organize and preserve their research online in an institutional context. It showcases the scholarship of the York University community through the use of a special standards-based software platform that collects usage statistics and provides exceptional visibility on the web.</p>
+<p>To learn more about YorkSpace, visit the <xref target="http://researchguides.library.yorku.ca/yorkspace">YorkSpace Resource Site.</xref></p>
 </div>
 </body>
 <options/>

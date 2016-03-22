@@ -1,406 +1,1221 @@
 <?xml version="1.0"?>
 <!DOCTYPE input-forms SYSTEM "input-forms.dtd">
-
-
 <input-forms>
+<!-- The form-map maps collection handles to forms. DSpace does not       -->
+<!-- require that a collection's name be unique, even within a community .-->
+<!-- DSpace does however insure that each collection's handle is unique.  -->
+<!-- Form-map provides the means to associate a unique collection name    -->
+<!-- with a form. The form-map also provides the special handle "default" -->
+<!-- (which is never a collection), here mapped to "traditional". Any     -->
+<!-- collection which does not appear in this map will be associated with -->
+<!-- the mapping for handle "default".                                    -->
+<form-map>
+<name-map collection-handle="default" form-name="traditional"/>
+<name-map collection-handle="10315/2901" form-name="icos"/>
+<name-map collection-handle="10315/4519" form-name="mrp_history"/>
+<name-map collection-handle="10315/1478" form-name="ascimages"/>
+<name-map collection-handle="10315/581" form-name="ascimages"/>
+<name-map collection-handle="10315/8004" form-name="ascsheetmusic"/>
+</form-map>
+<!-- The form-definitions map lays out the detailed definition of all the -->
+<!-- submission forms.Each separate form set has a unique name as an      -->
+<!-- attribute. This name matches one of the names in the form-map. One   -->
+<!-- named form set has the name "traditional"; as this name suggests,    -->
+<!-- it is the old style and is also the default, which gets used when    -->
+<!-- the specified collection has no correspondingly named form set.      -->
+<!--                                                                      -->
+<!-- Each form set contains an ordered set of pages; each page defines    -->
+<!-- one submission metadata entry screen. Each page has an ordered list  -->
+<!-- of field definitions, Each field definition corresponds to one       -->
+<!-- metatdata entry (a so-called row), which has a DC element name, a    -->
+<!-- displayed label, a text string prompt which is called a hint , and   -->
+<!-- an input-type. Each field also may hold optional elements: DC        -->
+<!-- qualifier name, a repeatable flag, and a text string whose presence  -->
+<!-- serves as a 'this field is required' flag.                           -->
+<form-definitions>
+<!-- IOCS!!!  -->
+<form name="icos">
+<page number="1">
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>contributor</dc-element>
+<dc-qualifier>author</dc-qualifier>
+<repeatable>true</repeatable>
+<label>Authors</label>
+<input-type>name</input-type>
+<hint>Enter the names of the authors of this item below.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>title</dc-element>
+<dc-qualifier></dc-qualifier>
+<repeatable>false</repeatable>
+<label>Title</label>
+<input-type>textarea</input-type>
+<hint>Enter the main title of the item.</hint>
+<required>You must enter a main title for this item.</required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>title</dc-element>
+<dc-qualifier>alternative</dc-qualifier>
+<repeatable>true</repeatable>
+<label>Other Titles</label>
+<input-type>onebox</input-type>
+<hint>Enter either:  "Session Paper" or "Plenary Lecture".</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>date</dc-element>
+<dc-qualifier>issued</dc-qualifier>
+<repeatable>false</repeatable>
+<label>Date of Issue</label>
+<input-type>date</input-type>
+<hint>Enter : 2009</hint>
+<required>You must enter at least the year.</required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>publisher</dc-element>
+<dc-qualifier></dc-qualifier>
+<repeatable>false</repeatable>
+<label>Publisher</label>
+<input-type>onebox</input-type>
+<hint>Enter: York University</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>identifier</dc-element>
+<dc-qualifier>citation</dc-qualifier>
+<repeatable>false</repeatable>
+<label>Citation</label>
+<input-type>textarea</input-type>
+<hint>Enter: Proceedings of the 23rd International Congress of Onomastic Sciences</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>identifier</dc-element>
+<dc-qualifier></dc-qualifier>
+<!-- An input-type of qualdrop_value MUST be marked as repeatable -->
+<repeatable>true</repeatable>
+<label>Identifiers</label>
+<input-type value-pairs-name="common_identifiers">qualdrop_value</input-type>
+<hint>Select: ISBN
+Enter: 978-1-55014-521-2</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>type</dc-element>
+<dc-qualifier></dc-qualifier>
+<repeatable>true</repeatable>
+<label>Type</label>
+<input-type value-pairs-name="common_types">dropdown</input-type>
+<hint> Select: "Article"</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>language</dc-element>
+<dc-qualifier>iso</dc-qualifier>
+<repeatable>false</repeatable>
+<label>Language</label>
+<input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+<hint>Select the language of the main content of the item.  If the language does not appear in the list below, please select 'Other'.  If the content does not really have a language (for example, if it is a dataset or an image) please select 'N/A'.</hint>
+<required></required>
+</field>
+</page>
+<page number="2">
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>subject</dc-element>
+<dc-qualifier></dc-qualifier>
+<!-- An input-type of twobox MUST be marked as repeatable -->
+<repeatable>true</repeatable>
+<label>Subject Keywords</label>
+<input-type>twobox</input-type>
+<hint> Enter subjects provided by Prof. Wolf Ahrens! </hint>
+<required></required>
+<vocabulary>srsc</vocabulary>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>description</dc-element>
+<dc-qualifier>abstract</dc-qualifier>
+<repeatable>true</repeatable>
+<label>Abstract</label>
+<input-type>textarea</input-type>
+<hint> Copy abstract from article. Double check for errors in OCR. 
+Add a separate abstract for each langauage in which the abstract is available.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>rights</dc-element>
+<dc-qualifier></dc-qualifier>
+<repeatable>true</repeatable>
+<label>dc.rights</label>
+<input-type>textarea</input-type>
+<hint>Enter:  The following articles are © 2009 with the individual authors. They are made available free of charge from this page as a service to the community under the terms of the Creative Commons Attribution-Non Commercial-No Derivative Works license version 3.0. For full details go to http://creativecommons.org.licenses/ny-nd.3.0</hint>
+<required></required>
+</field>
+</page>
+</form>
+<!-- TRADITIONAL!!!  -->
+<form name="traditional">
+<page number="1">
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>contributor</dc-element>
+<dc-qualifier>author</dc-qualifier>
+<repeatable>true</repeatable>
+<label>Authors</label>
+<input-type>name</input-type>
+<hint>Enter the names of the authors of this item below.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>title</dc-element>
+<dc-qualifier></dc-qualifier>
+<repeatable>false</repeatable>
+<label>Title</label>
+<input-type>textarea</input-type>
+<hint>Enter the main title of the item.</hint>
+<required>You must enter a main title for this item.</required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>title</dc-element>
+<dc-qualifier>alternative</dc-qualifier>
+<repeatable>true</repeatable>
+<label>Other Titles</label>
+<input-type>onebox</input-type>
+<hint>If the item has any alternative titles, please enter them below.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>date</dc-element>
+<dc-qualifier>issued</dc-qualifier>
+<repeatable>false</repeatable>
+<label>Date of Issue</label>
+<input-type>date</input-type>
+<hint>Please give the date of previous publication or public distribution
+                        below.  You can leave out the day and/or month if they aren't
+                        applicable.</hint>
 
- <!-- The form-map maps collection handles to forms. DSpace does not       -->
- <!-- require a collection name to be unique, not even within a community. -->
- <!-- DSpace does however ensure that each collection's handle is unique.  -->
- <!-- Form-map provides the means to associate a unique collection name    -->
- <!-- with a form. The form-map also provides the special handle "default" -->
- <!-- (which is never a collection), here mapped to "traditional". Any     -->
- <!-- collection which does not appear in this map will be associated with -->
- <!-- the mapping for handle "default".                                    -->
+<required>You must enter at least the year.</required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>publisher</dc-element>
+<dc-qualifier></dc-qualifier>
+<repeatable>false</repeatable>
+<label>Publisher</label>
+<input-type>onebox</input-type>
+<hint>Enter the name of the publisher of the previously issued instance of this item.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>identifier</dc-element>
+<dc-qualifier>citation</dc-qualifier>
+<repeatable>false</repeatable>
+<label>Citation</label>
+<input-type>textarea</input-type>
+<hint>Enter a standard citation for the previously issued instance of this item. 
+If the item is a journal article, enter title of journal, iolume, issue, year and page numbers here.
+Example:  Journal of the American Society for Information Science and Technology 59.8 (2008): 1331-46.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>relation</dc-element>
+<dc-qualifier>ispartofseries</dc-qualifier>
+<repeatable>true</repeatable>
+<label>Series/Report No.</label>
+<input-type>series</input-type>
+<hint>Enter the series and number assigned to this item by your community.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>identifier</dc-element>
+<dc-qualifier></dc-qualifier>
+<!-- An input-type of qualdrop_value MUST be marked as repeatable -->
+<repeatable>true</repeatable>
+<label>Identifiers</label>
+<input-type value-pairs-name="common_identifiers">qualdrop_value</input-type>
+<hint>If the item has any identification numbers or codes associated with
+it, please enter the types and the actual numbers or codes below.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>type</dc-element>
+<dc-qualifier></dc-qualifier>
+<repeatable>true</repeatable>
+<label>Type</label>
+<input-type value-pairs-name="common_types">dropdown</input-type>
+<hint> Select the type(s) of content of the item. To select more than one value in the list, you may have to hold down the "CTRL" or "Shift" key.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>language</dc-element>
+<dc-qualifier>iso</dc-qualifier>
+<repeatable>false</repeatable>
+<label>Language</label>
+<input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+<hint>Select the language of the main content of the item.  If the language does not appear in the list below, please select 'Other'.  If the content does not really have a language (for example, if it is a dataset or an image) please select 'N/A'.</hint>
+<required></required>
+</field>
+</page>
+<page number="2">
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>subject</dc-element>
+<dc-qualifier></dc-qualifier>
+<!-- An input-type of twobox MUST be marked as repeatable -->
+<repeatable>true</repeatable>
+<label>Subject Keywords</label>
+<input-type>twobox</input-type>
+<hint> Enter appropriate subject keywords or phrases below. </hint>
+<required></required>
+<vocabulary>srsc</vocabulary>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>description</dc-element>
+<dc-qualifier>abstract</dc-qualifier>
+<repeatable>true</repeatable>
+<label>Abstract</label>
+<input-type>textarea</input-type>
+<hint> Enter the abstract of the item below. 
+Add a separate abstract for each langauage in which the abstract is available.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>description</dc-element>
+<dc-qualifier>sponsorship</dc-qualifier>
+<repeatable>false</repeatable>
+<label>Sponsors</label>
+<input-type>textarea</input-type>
+<hint> Enter the names of any sponsors and/or funding codes in the box below. </hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>description</dc-element>
+<dc-qualifier></dc-qualifier>
+<repeatable>false</repeatable>
+<label>Description</label>
+<input-type>textarea</input-type>
+<hint> Enter any other description or comments in this box. </hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>rights</dc-element>
+<dc-qualifier>journal</dc-qualifier>
+<repeatable>true</repeatable>
+<label>Journal homepage URL</label>
+<input-type>onebox</input-type>
+<hint>If required by the publisher's policy on repository deposition, please enter the URL of the journal's homepage here.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>rights</dc-element>
+<dc-qualifier>publisher</dc-qualifier>
+<repeatable>true</repeatable>
+<label>Publisher's Website URL</label>
+<input-type>onebox</input-type>
+<hint>If required by the publisher's policy on repository deposition, please enter the URL of the publisher's homepage here.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>rights</dc-element>
+<dc-qualifier>article</dc-qualifier>
+<repeatable>true</repeatable>
+<label>Article URL (publisher's version)</label>
+<input-type>onebox</input-type>
+<hint>If required by the publisher's policy on repository deposition, please enter the URL of the publisher's version of the article here.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>rights</dc-element>
+<dc-qualifier></dc-qualifier>
+<repeatable>true</repeatable>
+<label>Publisher required phrase</label>
+<input-type>textarea</input-type>
+<hint>If the publisher requires a phrase or phrases to accompany the self-archiving of an article, please enter it here.</hint>
+<required></required>
+</field>
+</page>
+</form>
+<!-- MRPs for Dept. of History  -->
+<form name="mrp_history">
+<page number="1">
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>contributor</dc-element>
+<dc-qualifier>author</dc-qualifier>
+<repeatable>true</repeatable>
+<label>Author</label>
+<input-type>name</input-type>
+<hint>Enter the author name.</hint>
+<required>Required field.</required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>contributor</dc-element>
+<dc-qualifier>advisor</dc-qualifier>
+<repeatable>true</repeatable>
+<label>MRP advisor</label>
+<input-type>name</input-type>
+<hint>Please enter the advisor name(s).</hint>
+<required>You must enter at least one advisor.</required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>date</dc-element>
+<dc-qualifier>issued</dc-qualifier>
+<repeatable>false</repeatable>
+<label>Date of Graduation</label>
+<input-type>date</input-type>
+<hint>Please supply the expected month and year of graduation.  You can leave out the day and/or month if they aren't
+                        applicable.</hint>
+<required>You must enter at least the year.</required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>title</dc-element>
+<dc-qualifier></dc-qualifier>
+<repeatable>false</repeatable>
+<label>Title of MRP</label>
+<input-type>textarea</input-type>
+<hint>Enter title of MRP.</hint>
+<required>Please enter a title.</required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>title</dc-element>
+<dc-qualifier>alternative</dc-qualifier>
+<repeatable>true</repeatable>
+<label>Other Titles</label>
+<input-type>onebox</input-type>
+<hint>If your MRP has any alternative titles, please enter them below.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>description</dc-element>
+<dc-qualifier>abstract</dc-qualifier>
+<repeatable>true</repeatable>
+<label>Abstract</label>
+<input-type>textarea</input-type>
+<hint> Enter the abstract of the item below. 
+Add a separate abstract for each langauage in which the abstract is available.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>subject</dc-element>
+<dc-qualifier></dc-qualifier>
+<!-- An input-type of twobox MUST be marked as repeatable -->
+<repeatable>true</repeatable>
+<label>Subject Keywords</label>
+<input-type>twobox</input-type>
+<hint> Enter appropriate subject keywords or phrases below. </hint>
+<required></required>
+<vocabulary>srsc</vocabulary>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>language</dc-element>
+<dc-qualifier>iso</dc-qualifier>
+<repeatable>false</repeatable>
+<label>Primary language of MRP</label>
+<input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+<hint>Select the primary language of your MRP.  If the language does not appear in the list below, please select 'Other'.  If the content does not really have a language (for example, if it is a dataset or an image) please select 'N/A'.</hint>
+<required></required>
+</field>
 
- <form-map>
-   <name-map collection-handle="default" form-name="traditional" />
- </form-map>
-
-
- <!-- The form-definitions map lays out the detailed definition of all the -->
- <!-- submission forms. Each separate form set has a unique name as an     -->
- <!-- attribute. This name matches one of the names in the form-map. One   -->
- <!-- named form set has the name "traditional"; as this name suggests,    -->
- <!-- it is the old style and is also the default, which gets used when    -->
- <!-- the specified collection has no correspondingly-named form set.      -->
- <!--                                                                      -->
- <!-- Each form set contains an ordered set of pages; each page defines    -->
- <!-- one submission metadata entry screen. Each page has an ordered list  -->
- <!-- of field definitions, Each field definition corresponds to one       -->
- <!-- metatdata entry (a so-called row), which has a DC element name, a    -->
- <!-- displayed label, a text string prompt which is called a hint, and    -->
- <!-- an input-type. Each field also may hold optional elements: DC        -->
- <!-- qualifier name, a repeatable flag, and a text string whose presence  -->
- <!-- serves as a 'this field is required' flag.                           -->
-
- <form-definitions>
-
-   <form name="traditional">
+</page>
+<page number="2">
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>description</dc-element>
+<dc-qualifier>sponsorship</dc-qualifier>
+<repeatable>false</repeatable>
+<label>Sponsorship Acknowledgement</label>
+<input-type>textarea</input-type>
+<hint> Here is your opportunity to thank any sponsors if applicable.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>description</dc-element>
+<dc-qualifier></dc-qualifier>
+<repeatable>false</repeatable>
+<label>Additional descriptive comment or notes</label>
+<input-type>textarea</input-type>
+<hint> This is a catch all field for anything that you'd like to add. Enter any other description or comments in this box. </hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>type</dc-element>
+<dc-qualifier></dc-qualifier>
+<repeatable>false</repeatable>
+<label>Item description/type</label>
+<input-type value-pairs-name="mrp_type">dropdown</input-type>
+<hint>Automatically populated for MRPs - please ignore.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>degree</dc-element>
+<dc-qualifier>level</dc-qualifier>
+<repeatable>false</repeatable>
+<label>Degree level</label>
+<input-type value-pairs-name="mrp_degree_level">dropdown</input-type>
+<hint>Automatically populated for MRPs - please ignore.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>degree</dc-element>
+<dc-qualifier>name</dc-qualifier>
+<repeatable>false</repeatable>
+<label>Degree name</label>
+<input-type value-pairs-name="mrp_degree_name">dropdown</input-type>
+<hint>Automatically populated for Master of Arts MRPs - please ignore.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>degree</dc-element>
+<dc-qualifier>grantor</dc-qualifier>
+<repeatable>false</repeatable>
+<label>Degree Grantor</label>
+<input-type value-pairs-name="yorku_degree_grantor">dropdown</input-type>
+<hint>Automatically populated for MRP - please ignore.</hint>
+<required></required>
+</field>
+</page>
+</form>
+   <form name="ascimages">
      <page number="1">
+     
+     <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>ASC Number</label>
+         <input-type>onebox</input-type>
+         <hint> Example: ASC01213 
+	Please obtain your ASC number from the ASC Image Log. (dc.identifier)
+	</hint>
+         <required>You must enter a ASC Number for this item.</required>
+       </field>
+ 
        <field>
-         <dc-schema>dc</dc-schema>
-         <dc-element>contributor</dc-element>
-         <dc-qualifier>author</dc-qualifier>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>citation</dc-qualifier>
          <repeatable>true</repeatable>
-         <label>Authors</label>
-         <input-type>name</input-type>
-         <hint>Enter the names of the authors of this item.</hint>
+         <label>Accession Number</label>
+         <input-type>onebox</input-type>
+         <hint>Example: "1974-001 / 295 (1643)". 
+Accession Number / Box # (File Number)
+If the item is SPCOLL, use the SPCOLL call number. (dc.identifier.citation)</hint>
          <required></required>
        </field>
-
-       <field>
-         <dc-schema>dc</dc-schema>
+        
+        <field>
+		 <dc-schema>dc</dc-schema>
          <dc-element>title</dc-element>
          <dc-qualifier></dc-qualifier>
          <repeatable>false</repeatable>
          <label>Title</label>
          <input-type>onebox</input-type>
-         <hint>Enter the main title of the item.</hint>
+         <hint>Enter the main title of the item from the negative envelope or file for prints using “ : “ between clauses.
+Examples from negative envelopes: 
+“Yorkville village : Escaped monkey recaptured”
+“Yorkville village : on a Friday night "after 4" “
+“Ronnie Hawkins : entertainer”</hint>
          <required>You must enter a main title for this item.</required>
        </field>
-
+       
        <field>
-         <dc-schema>dc</dc-schema>
+		 <dc-schema>dc</dc-schema>
          <dc-element>title</dc-element>
          <dc-qualifier>alternative</dc-qualifier>
          <repeatable>true</repeatable>
          <label>Other Titles</label>
          <input-type>onebox</input-type>
-         <hint>If the item has any alternative titles, please enter them here.</hint>
+         <hint>If the item has any alternative titles, please enter them below.</hint>
          <required></required>
        </field>
-
+       
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>author</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Creator (author, photographer, etc.)</label>
+         <input-type>name</input-type>
+         <hint>Enter the names of the author(s)/photographer(s) of this item below.</hint>
+         <required></required>
+       </field>
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>date</dc-element>
          <dc-qualifier>issued</dc-qualifier>
          <repeatable>false</repeatable>
-         <label>Date of Issue</label>
+         <label>Structured Date</label>
          <input-type>date</input-type>
-         <hint>Please give the date of previous publication or public distribution.
-                        You can leave out the day and/or month if they aren't
-                        applicable.</hint>
+         <hint>This field only shows up if you select the “Published” check box in the first YorkSpace/DarkSpace submission screen.
+THIS IS A STRUCTURED FIELD. You will need to enter your best guess for the data.  Use the “Date (free text notes on date)” to describe your estimate, if applicable.
+Please give the date of physical item creation below.  You can leave out the day and/or month if they aren't available. This field allows users to browse by date.</hint>
          <required>You must enter at least the year.</required>
        </field>
 
-       <field>
-         <dc-schema>dc</dc-schema>
+	  <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>date</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Date (free text notes on date)</label>
+         <input-type>onebox</input-type>
+<hint>This field can be used to qualify your decision for your “Date of Item Creation”.
+Use this to fill in other date related information, such as date published, or dates that you are unsure of. You can use square brackes, circa notes, n.d. etc. becuse this is a free text field.  
+Take care to describe what you're entering.</hint>
+         <required></required>
+       </field>
+	
+	<field>
+		 <dc-schema>dc</dc-schema>
          <dc-element>publisher</dc-element>
          <dc-qualifier></dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>Publisher</label>
          <input-type>onebox</input-type>
-         <hint>Enter the name of the publisher of the previously issued instance of this item.</hint>
+         <hint>If item was previously published, enter publisher name here.</hint>
          <required></required>
        </field>
-
-       <field>
-         <dc-schema>dc</dc-schema>
-         <dc-element>identifier</dc-element>
-         <dc-qualifier>citation</dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>Citation</label>
+       
+	<field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>format</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Format</label>
          <input-type>onebox</input-type>
-         <hint>Enter the standard citation for the previously issued instance of this item.</hint>
+         <hint>Enter format-related information, take care to describe using RAD if possible. Example: 1 photograph : b&amp;w negative ; 35m</hint>
          <required></required>
        </field>
-
+       
        <field>
-         <dc-schema>dc</dc-schema>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Relation</label>
+         <input-type>onebox</input-type>
+         <hint>Example: "One negative (#4A-5) scanned out of 11 in assignment".</hint>
+         <required></required>
+       </field>
+       
+     <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier>ispartof</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Forms part of (Name of fonds or descriptive info)</label>
+         <input-type>onebox</input-type>
+         <hint>If the item is archival, please enter the name of the fonds.
+Example: "Toronto Telegram fonds, F0477”.
+If the item is not archival in nature, enter the citation here.  
+For example, if the item is a plate from a book, use this field to enter the name of the book.</hint>
+         <required></required>
+       </field>  
+       
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier>uri</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Relation URL (URL for Fonds, or link to VuFind URL)</label>
+         <input-type>onebox</input-type>
+         <hint>As above, if the item is archival, please enter a link to the Fonds description.
+Example: http://archivesfa.library.yorku.ca/fonds/ON00370-f0000433.htm
+If the item is not archival in nature, please enter a link to the item in VuFind, if applicable.
+</hint>
+         <required></required>
+       </field>  
+       
+       <field>
+		 <dc-schema>dc</dc-schema>
          <dc-element>relation</dc-element>
          <dc-qualifier>ispartofseries</dc-qualifier>
          <repeatable>true</repeatable>
-         <label>Series/Report No.</label>
-         <input-type>series</input-type>
-         <hint>Enter the series and number assigned to this item by your community.</hint>
+         <label>Series name</label>
+         <input-type value-pairs-name="asc_series_name">dropdown</input-type>
+         <hint>Use this field to group together exhibits. 
+For example, by selecting: "York50Photos" you will enable this image to be browsed by the York50Photos series in YorkSpace. 
+A controlled vocabulary is provided in this drop down list. 
+To select more than one value in the list, you may need to hold down the "CTRL" or "SHIFT" key.
+Please email akosavic@yorku.ca to add another series name.</hint>
          <required></required>
        </field>
 
        <field>
-         <dc-schema>dc</dc-schema>
-         <dc-element>identifier</dc-element>
-         <dc-qualifier></dc-qualifier>
-         <!-- An input-type of qualdrop_value MUST be marked as repeatable -->
-         <repeatable>true</repeatable>
-         <label>Identifiers</label>
-         <input-type value-pairs-name="common_identifiers">qualdrop_value</input-type>
-         <hint>If the item has any identification numbers or codes associated with
-it, please enter the types and the actual numbers or codes.</hint>
-         <required></required>
-       </field>
-
-       <field>
-         <dc-schema>dc</dc-schema>
+		 <dc-schema>dc</dc-schema>
          <dc-element>type</dc-element>
          <dc-qualifier></dc-qualifier>
          <repeatable>true</repeatable>
          <label>Type</label>
          <input-type value-pairs-name="common_types">dropdown</input-type>
-         <hint>Select the type(s) of content of the item. To select more than one value in the list, you may have to hold down the "CTRL" or "Shift" key.</hint>
+         <hint> Select the type(s) of content of the item. To select more than one value in the list, you may have to hold down the "CTRL" or "Shift" key.</hint>
          <required></required>
        </field>
 
        <field>
-         <dc-schema>dc</dc-schema>
+		 <dc-schema>dc</dc-schema>
          <dc-element>language</dc-element>
          <dc-qualifier>iso</dc-qualifier>
          <repeatable>false</repeatable>
          <label>Language</label>
          <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
-         <hint>Select the language of the main content of the item.  If the language does not appear in the list, please select 'Other'.  If the content does not really have a language (for example, if it is a dataset or an image) please select 'N/A'.</hint>
+         <hint>Select the language of the main content of the item.  If the language does not appear in the list below, please select 'Other'.  If the content does not really have a language (for example, if it is a dataset or an image) please select 'N/A'.</hint>
          <required></required>
        </field>
      </page>
 
      <page number="2">
        <field>
-         <dc-schema>dc</dc-schema>
+		 <dc-schema>dc</dc-schema>
          <dc-element>subject</dc-element>
          <dc-qualifier></dc-qualifier>
          <!-- An input-type of twobox MUST be marked as repeatable -->
          <repeatable>true</repeatable>
          <label>Subject Keywords</label>
          <input-type>twobox</input-type>
-         <hint>Enter appropriate subject keywords or phrases. </hint>
+         <hint> Please follow the following conventions: capitalize first letter, use plurals, order names by “Lastname, Firstname” unless it’s a proper name. </hint>
          <required></required>
          <vocabulary>srsc</vocabulary>
        </field>
-
-       <field>
-         <dc-schema>dc</dc-schema>
-         <dc-element>description</dc-element>
-         <dc-qualifier>abstract</dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>Abstract</label>
-         <input-type>textarea</input-type>
-         <hint>Enter the abstract of the item. </hint>
-         <required></required>
-       </field>
-
-       <field>
-         <dc-schema>dc</dc-schema>
-         <dc-element>description</dc-element>
-         <dc-qualifier>sponsorship</dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>Sponsors</label>
-         <input-type>textarea</input-type>
-         <hint>Enter the names of any sponsors and/or funding codes in the box. </hint>
-         <required></required>
-       </field>
-
-       <field>
-         <dc-schema>dc</dc-schema>
+       
+	<field>
+		 <dc-schema>dc</dc-schema>
          <dc-element>description</dc-element>
          <dc-qualifier></dc-qualifier>
          <repeatable>false</repeatable>
          <label>Description</label>
          <input-type>textarea</input-type>
-         <hint>Enter any other description or comments in this box. </hint>
+         <hint>Describe the image in detail here. </hint>
+         <required></required>
+       </field>
+      
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>abstract</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Scope and Content</label>
+         <input-type>textarea</input-type>
+         <hint> This is intended as the “Scope and Content Note” </hint>
+         <required></required>
+       </field>
+
+       <field>
+	<dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>sponsorship</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Sponsors</label>
+         <input-type value-pairs-name="asc_sponsors">dropdown</input-type>
+         <hint> Select the name(s) of sponsor(s) from the drop down box. 
+To select more than one value, you may need to hold down the "CTRL" or "Shift" key.
+Please contact akosavic@yorku.ca to add another sponsor to the controlled vocabulary.</hint>
+         <required></required>
+       </field>
+       
+       <field>
+          <dc-schema>dc</dc-schema>
+         <dc-element>rights</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Rights information</label>
+         <input-type value-pairs-name="asc_rights">dropdown</input-type>
+         <hint>Please select the appropriate rights information.  
+Contact akosavic@yorku.ca to other options to the controlled vocabulary.</hint>
          <required></required>
        </field>
      </page>
    </form>
-
-   <form name="one">
+<!-- Sheet Music Mapping -->
+   <form name="ascsheetmusic">
      <page number="1">
-       <field>
-         <dc-schema>dc</dc-schema>
-         <dc-element>contributor</dc-element>
-         <dc-qualifier>author</dc-qualifier>
+     
+     <field>
+	 <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>SMC/JAC/ASC Number</label>
+         <input-type>onebox</input-type>
+         <hint>Please obtain your identifer from the folder or item slip. 
+Example: SMC0014 
+	</hint>
+         <required>You must enter an identifier for this item.</required>
+       </field>
+<field>
+	 <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>uri</dc-qualifier>
          <repeatable>true</repeatable>
-         <label>One: Authors</label>
-         <input-type>name</input-type>
-         <hint>Enter the names of the authors of this item.</hint>
+         <label>Link to VuFind record</label>
+         <input-type>onebox</input-type>
+         <hint> Please copy and paste the VuFind URL for this record here.
+	</hint>
+         <required>You must enter a VuFind URL for this item.</required>
+       </field>
+        <field>
+	 <dc-schema>dc</dc-schema>
+         <dc-element>title</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Title (short)</label>
+         <input-type>textarea</input-type>
+         <hint>This is the title without the author's name added. Enter the Variant Title or Cover Title as it appears in VuFind. Do not include any square brackets.</hint>
+         <required>You must enter a title for this item.</required>
+       </field>
+       <field>
+	 <dc-schema>dc</dc-schema>
+         <dc-element>creator</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Personal author, Performer</label>
+         <input-type>onebox</input-type>
+         <hint>Enter each author in their own box. Do not include comma after first name. 
+Do not include date of birth. If qualifier (ie. lyricist) is provided, enclose in square brackets with one space after name. 
+Example: Bayly, Thomas Haynes [lyricist]</hint>
+         <required>test</required>
+       </field>
+	
+<field>
+	 <dc-schema>dc</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Published</label>
+         <input-type>onebox</input-type>
+         <hint>Copy publisher information exactly as it appears from catalogue record. Leave date intact.</hint>
          <required></required>
        </field>
-      </page>
-    </form>
- </form-definitions>
+
+       <field>
+	<dc-schema>dc</dc-schema>
+         <dc-element>date</dc-element>
+         <dc-qualifier>issued</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Date</label>
+         <input-type>onebox</input-type>
+         <hint>Get from Publication Info. Only enter date if it exists and is not in brackets. Enter yyyy only. 
+Example: 1889</hint>
+         <required></required>
+       </field>
+	<field>
+	<dc-schema>dc</dc-schema>
+         <dc-element>format</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Physical Description</label>
+         <input-type>onebox</input-type>
+         <hint>Copy directly from catalogue record.</hint>
+         <required></required>
+       </field>
+<field>
+	 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>General Note</label>
+         <input-type>onebox</input-type>
+         <hint>Make sure each note is entered separately (in its own box). Enter everything as it appears.  </hint>
+         <required></required>
+       </field>
+<field>
+	<dc-schema>dc</dc-schema>
+         <dc-element>language</dc-element>
+         <dc-qualifier>iso</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Language</label>
+         <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+         <hint>Select the language of the main content of the item.  If the language does not appear in the list below, please select 'Other'.  If the content does not really have a language (for example, if it is a dataset or an image) please select 'N/A'.</hint>
+         <required></required>
+       </field>
+ <field>
+	<dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <!-- An input-type of twobox MUST be marked as repeatable -->
+         <repeatable>true</repeatable>
+         <label>#653 in Staff View</label>
+         <input-type>twobox</input-type>
+         <hint> Open "Staff view" in the VuFind record, copy from #653. Put each description (in between commas) into its own box. Capitlaize the first word in each box. Do not put a period at the end of the word.</hint>
+         <required></required>
+         <vocabulary>srsc</vocabulary>
+       </field>
+       <field>
+	<dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier>ispartofseries</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Series name</label>
+         <input-type value-pairs-name="asc_series_name">dropdown</input-type>
+         <hint>If SMC: select Sheet Music Collection
+If JAC: select John Arpin Sheet Music Collection</hint>
+         <required></required>
+       </field>
+<field>
+	<dc-schema>dc</dc-schema>
+         <dc-element>type</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Type</label>
+         <input-type value-pairs-name="common_types">dropdown</input-type>
+         <hint> Select "Sheet music".</hint>
+         <required></required>
+       </field>
+<field>
+          <dc-schema>dc</dc-schema>
+         <dc-element>rights</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Rights information</label>
+         <input-type value-pairs-name="asc_rights">dropdown</input-type>
+         <hint>Please select the rights information so that this field is populated.  
+</hint>
+         <required></required>
+       </field>
+     </page>
+
+     <page number="2">
+     
+<field>
+	 <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier>ispartof</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Name of fonds</label>
+         <input-type>onebox</input-type>
+         <hint>Ignore this unless provided in catalogue record.</hint>
+         <required></required>
+       </field>  
+       <field>
+	<dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier>uri</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Relation URL (URL for Fonds, or link to VuFind URL)</label>
+         <input-type>onebox</input-type>
+         <hint>As above, if the item is archival, please enter a link to the Fonds description.
+Example: http://archivesfa.library.yorku.ca/fonds/ON00370-f0000433.htm
+If the item is not archival in nature, please enter a link to the item in VuFind, if applicable.
+</hint>
+         <required></required>
+       </field>  
+     </page>
+   </form>
+
+</form-definitions>
 
 
- <!-- form-value-pairs populate dropdown and qualdrop-value lists.          -->
- <!-- The form-value-pairs element holds child elements named 'value-pairs' -->
- <!-- A 'value-pairs' element has a value-pairs-name and a dc-term          -->
- <!-- attribute. The dc-term attribute specifies which to which Dublin Core -->
- <!-- Term this set of value-pairs applies.                                 -->
- <!--     Current dc-terms are: identifier-pairs, type-pairs, and           -->
- <!--     language_iso-pairs. The name attribute matches a name             -->
- <!--     in the form-map, above.                                           -->
- <!-- A value-pair contains one 'pair' for each value displayed in the list -->
- <!-- Each pair contains a 'displayed-value' element and a 'stored-value'   -->
- <!-- element. A UI list displays the displayed-values, but the program     -->
- <!-- stores the associated stored-values in the database.                  -->
+<!-- form-value-pairs populate dropdown and qualdrop-value lists.          -->
+<!-- The form-value-pairs element holds child elements named 'value-pairs' -->
+<!-- A 'value-pairs' element has a value-pairs-name and a dc-term          -->
+<!-- attribute. The dc-term attribute specifies which to which Dublin Core -->
+<!-- Term this set of value-pairs applies.                                 -->
+<!--     Current dc-terms are: identifier-pairs, type-pairs, and           -->
+<!--     language_iso-pairs. The name attribute matches a name             -->
+<!--     in the form-map, above.                                           -->
+<!-- A value-pair contains one 'pair' for each value displayed in the list -->
+<!-- Each pair contains a 'displayed-value' element and a 'stored-value'   -->
+<!-- element. A UI list displays the displayed-values, but the program     -->
+<!-- stores the associated stored-values in the database.                  -->
 
- <form-value-pairs>
-   <value-pairs value-pairs-name="common_identifiers" dc-term="identifier">
-     <pair>
-       <displayed-value>ISSN</displayed-value>
-       <stored-value>issn</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Other</displayed-value>
-       <stored-value>other</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>ISMN</displayed-value>
-       <stored-value>ismn</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Gov't Doc #</displayed-value>
-       <stored-value>govdoc</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>URI</displayed-value>
-       <stored-value>uri</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>ISBN</displayed-value>
-       <stored-value>isbn</stored-value>
-     </pair>
-   </value-pairs>
-
-   <value-pairs value-pairs-name="common_types" dc-term="type">
-     <pair>
-       <displayed-value>Animation</displayed-value>
-       <stored-value>Animation</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Article</displayed-value>
-       <stored-value>Article</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Book</displayed-value>
-       <stored-value>Book</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Book chapter</displayed-value>
-       <stored-value>Book chapter</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Dataset</displayed-value>
-       <stored-value>Dataset</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Learning Object</displayed-value>
-       <stored-value>Learning Object</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Image</displayed-value>
-       <stored-value>Image</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Image, 3-D</displayed-value>
-       <stored-value>Image, 3-D</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Map</displayed-value>
-       <stored-value>Map</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Musical Score</displayed-value>
-       <stored-value>Musical Score</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Plan or blueprint</displayed-value>
-       <stored-value>Plan or blueprint</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Preprint</displayed-value>
-       <stored-value>Preprint</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Presentation</displayed-value>
-       <stored-value>Presentation</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Recording, acoustical</displayed-value>
-       <stored-value>Recording, acoustical</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Recording, musical</displayed-value>
-       <stored-value>Recording, musical</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Recording, oral</displayed-value>
-       <stored-value>Recording, oral</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Software</displayed-value>
-       <stored-value>Software</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Technical Report</displayed-value>
-       <stored-value>Technical Report</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Thesis</displayed-value>
-       <stored-value>Thesis</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Video</displayed-value>
-       <stored-value>Video</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Working Paper</displayed-value>
-       <stored-value>Working Paper</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Other</displayed-value>
-       <stored-value>Other</stored-value>
-     </pair>
-   </value-pairs>
-
-   <!-- default language order: (from dspace 1.2.1)
+<form-value-pairs>
+<value-pairs value-pairs-name="common_identifiers" dc-term="identifier">
+<pair>
+<displayed-value>ISSN</displayed-value>
+<stored-value>issn</stored-value>
+</pair>
+<pair>
+<displayed-value>Other</displayed-value>
+<stored-value>other</stored-value>
+</pair>
+<pair>
+<displayed-value>ISMN</displayed-value>
+<stored-value>ismn</stored-value>
+</pair>
+<pair>
+<displayed-value>Gov't Doc #</displayed-value>
+<stored-value>govdoc</stored-value>
+</pair>
+<pair>
+<displayed-value>URI</displayed-value>
+<stored-value>uri</stored-value>
+</pair>
+<pair>
+<displayed-value>ISBN</displayed-value>
+<stored-value>isbn</stored-value>
+</pair>
+</value-pairs>
+<value-pairs value-pairs-name="common_types" dc-term="type">
+<pair>
+<displayed-value>Animation</displayed-value>
+<stored-value>Animation</stored-value>
+</pair>
+<pair>
+<displayed-value>Article</displayed-value>
+<stored-value>Article</stored-value>
+</pair>
+<pair>
+<displayed-value>Book</displayed-value>
+<stored-value>Book</stored-value>
+</pair>
+<pair>
+<displayed-value>Book chapter</displayed-value>
+<stored-value>Book chapter</stored-value>
+</pair>
+<pair>
+<displayed-value>Dataset</displayed-value>
+<stored-value>Dataset</stored-value>
+</pair>
+<pair>
+<displayed-value>Learning Object</displayed-value>
+<stored-value>Learning Object</stored-value>
+</pair>
+<pair>
+<displayed-value>Image</displayed-value>
+<stored-value>Image</stored-value>
+</pair>
+<pair>
+<displayed-value>Image, 3-D</displayed-value>
+<stored-value>Image, 3-D</stored-value>
+</pair>
+<pair>
+<displayed-value>Map</displayed-value>
+<stored-value>Map</stored-value>
+</pair>
+<pair>
+<displayed-value>Musical Score</displayed-value>
+<stored-value>Musical Score</stored-value>
+</pair>
+<pair>
+<displayed-value>Photograph</displayed-value>
+<stored-value>Photograph</stored-value>
+</pair>
+<pair>
+<displayed-value>Plan or blueprint</displayed-value>
+<stored-value>Plan or blueprint</stored-value>
+</pair>
+<pair>
+<displayed-value>Poetry</displayed-value>
+<stored-value>Poetry</stored-value>
+</pair>
+<pair>
+<displayed-value>Preprint</displayed-value>
+<stored-value>Preprint</stored-value>
+</pair>
+<pair>
+<displayed-value>Presentation</displayed-value>
+<stored-value>Presentation</stored-value>
+</pair>
+<pair>
+<displayed-value>Recording, acoustical</displayed-value>
+<stored-value>Recording, acoustical</stored-value>
+</pair>
+<pair>
+<displayed-value>Recording, musical</displayed-value>
+<stored-value>Recording, musical</stored-value>
+</pair>
+<pair>
+<displayed-value>Recording, oral</displayed-value>
+<stored-value>Recording, oral</stored-value>
+</pair>
+<pair>
+<displayed-value>Sheet Music</displayed-value>
+<stored-value>Sheet Music</stored-value>
+</pair>
+<pair>
+<displayed-value>Software</displayed-value>
+<stored-value>Software</stored-value>
+</pair>
+<pair>
+<displayed-value>Technical Report</displayed-value>
+<stored-value>Technical Report</stored-value>
+</pair>
+<pair>
+<displayed-value>Thesis</displayed-value>
+<stored-value>Thesis</stored-value>
+</pair>
+<pair>
+<displayed-value>Video</displayed-value>
+<stored-value>Video</stored-value>
+</pair>
+<pair>
+<displayed-value>Working Paper</displayed-value>
+<stored-value>Working Paper</stored-value>
+</pair>
+<pair>
+<displayed-value>Other</displayed-value>
+<stored-value>Other</stored-value>
+</pair>
+<pair>
+<displayed-value>N/A</displayed-value>
+<stored-value></stored-value>
+</pair>
+</value-pairs>
+<!-- default language order: (from dspace 1.2.1)
         "en_US", "en", "es", "de", "fr", "it", "ja", "zh", "other", ""
      -->
-   <value-pairs value-pairs-name="common_iso_languages" dc-term="language_iso">
+<value-pairs value-pairs-name="common_iso_languages" dc-term="language_iso">
+<pair>
+<displayed-value>N/A</displayed-value>
+<stored-value></stored-value>
+</pair>
+<pair>
+<displayed-value>English (United States)</displayed-value>
+<stored-value>en_US</stored-value>
+</pair>
+<pair>
+<displayed-value>English</displayed-value>
+<stored-value>en</stored-value>
+</pair>
+<pair>
+<displayed-value>Spanish</displayed-value>
+<stored-value>es</stored-value>
+</pair>
+<pair>
+<displayed-value>German</displayed-value>
+<stored-value>de</stored-value>
+</pair>
+<pair>
+<displayed-value>French</displayed-value>
+<stored-value>fr</stored-value>
+</pair>
+<pair>
+<displayed-value>Italian</displayed-value>
+<stored-value>it</stored-value>
+</pair>
+<pair>
+<displayed-value>Japanese</displayed-value>
+<stored-value>ja</stored-value>
+</pair>
+<pair>
+<displayed-value>Chinese</displayed-value>
+<stored-value>zh</stored-value>
+</pair>
+<pair>
+<displayed-value>(Other)</displayed-value>
+<stored-value>other</stored-value>
+</pair>
+</value-pairs>
+<value-pairs value-pairs-name="mrp_degree_level" dc-term="degree_level">
+<pair>
+<displayed-value>master's</displayed-value>
+<stored-value>master's</stored-value>
+</pair>
+</value-pairs>
+<value-pairs value-pairs-name="mrp_degree_name" dc-term="degree_name">
+<pair>
+<displayed-value>Master of Arts</displayed-value>
+<stored-value>MA</stored-value>
+</pair>
+</value-pairs>
+<value-pairs value-pairs-name="yorku_degree_grantor" dc-term="degree_grantor">
+<pair>
+<displayed-value>York University</displayed-value>
+<stored-value>York University</stored-value>
+</pair>
+</value-pairs>
+<value-pairs value-pairs-name="mrp_type" dc-term="type">
+<pair>
+<displayed-value>Major Research Paper</displayed-value>
+<stored-value>Major Research Paper</stored-value>
+</pair>
+</value-pairs>
+<value-pairs value-pairs-name="asc_series_name" dc-term="relation_ispartofseries">
+<pair>
+       <displayed-value>Sheet Music Collection</displayed-value>
+       <stored-value>Sheet Music Collection</stored-value>
+     </pair>
+<pair>
+       <displayed-value>John Arpin Sheet Music Collection</displayed-value>
+       <stored-value>John Arpin Sheet Music Collection</stored-value>
+     </pair>
+<pair>
+       <displayed-value>Allan Robb Fleming Digitization Project</displayed-value>
+       <stored-value>Allan Robb Fleming Digitization Project</stored-value>
+     </pair>
+<pair>     
+       <displayed-value>Toronto Telegram</displayed-value>
+       <stored-value>Toronto Telegram</stored-value>
+     </pair>
+<pair>
+       <displayed-value>York 50 Photograph Collection</displayed-value>
+       <stored-value>York50Photos</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>From Act to Activism : York50</displayed-value>
+       <stored-value>From Act to Activism : York50</stored-value>
+     </pair>
+<pair>
+       <displayed-value>TTC Subway Opens!</displayed-value>
+       <stored-value>TTC Subway Opens!</stored-value>
+     </pair>
+<pair>
+       <displayed-value>I Heard a Story About Yorkville</displayed-value>
+       <stored-value>I Heard a Story About Yorkville</stored-value>
+</pair>
+<pair>
+       <displayed-value>N/A</displayed-value>
+       <stored-value></stored-value>
+</pair>
+   </value-pairs>
+<value-pairs value-pairs-name="asc_sponsors" dc-term="description_sponsorship">
+     <pair>
+       <displayed-value>Dept of Canadian Heritage through CCOP</displayed-value>
+       <stored-value>We acknowledge the financial support of the Department of Canadian Heritage through the Canadian Culture Online Program. | Nous tenons à souligner le soutien financier du ministère du Patrimoine canadien par le biais du Programme de culture canadienne en ligne.</stored-value>
+     </pair>
      <pair>
        <displayed-value>N/A</displayed-value>
        <stored-value></stored-value>
      </pair>
+   </value-pairs><value-pairs value-pairs-name="asc_rights" dc-term="relation_ispartofseries">
      <pair>
-       <displayed-value>English (United States)</displayed-value>
-       <stored-value>en_US</stored-value>
-      </pair>
-     <pair>
-       <displayed-value>English</displayed-value>
-       <stored-value>en</stored-value>
+       <displayed-value>For further copyright information contact : ascproj@yorku.ca</displayed-value>
+       <stored-value>For further copyright information contact : ascproj@yorku.ca</stored-value>
      </pair>
      <pair>
-       <displayed-value>Spanish</displayed-value>
-       <stored-value>es</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>German</displayed-value>
-       <stored-value>de</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>French</displayed-value>
-       <stored-value>fr</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Italian</displayed-value>
-       <stored-value>it</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Japanese</displayed-value>
-       <stored-value>ja</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Chinese</displayed-value>
-       <stored-value>zh</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Turkish</displayed-value>
-       <stored-value>tr</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>(Other)</displayed-value>
-       <stored-value>other</stored-value>
+       <displayed-value>N/A</displayed-value>
+       <stored-value></stored-value>
      </pair>
    </value-pairs>
-
- </form-value-pairs>
-
+</form-value-pairs>
 </input-forms>

@@ -26,6 +26,7 @@
             <Format ref="ore"/>
             <Format ref="rdf"/>
             <Format ref="etdms"/>
+            <Format ref="oai_etdms"/>
             <Format ref="mods"/>
             <Format ref="qdc"/>
             <Format ref="marc"/>
@@ -133,6 +134,12 @@
         <Format id="etdms">
             <Prefix>etdms</Prefix>
             <XSLT>metadataFormats/etdms.xsl</XSLT>
+            <Namespace>http://www.ndltd.org/standards/metadata/etdms/1.0/</Namespace>
+            <SchemaLocation>http://www.ndltd.org/standards/metadata/etdms/1.0/etdms.xsd</SchemaLocation>
+        </Format>
+        <Format id="oai_etdms">
+            <Prefix>oai_etdms</Prefix>
+            <XSLT>metadataFormats/oai_etdms.xsl</XSLT>
             <Namespace>http://www.ndltd.org/standards/metadata/etdms/1.0/</Namespace>
             <SchemaLocation>http://www.ndltd.org/standards/metadata/etdms/1.0/etdms.xsd</SchemaLocation>
         </Format>

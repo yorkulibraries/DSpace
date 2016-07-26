@@ -28,6 +28,7 @@
 
     <xsl:import href="../Mirage/Mirage.xsl"/>
     <xsl:import href="lib/xsl/core/navigation.xsl"/>
+    <xsl:import href="lib/xsl/core/page-structure.xsl"/>
     <xsl:import href="lib/xsl/aspect/artifactbrowser/item-list.xsl"/>
     <xsl:import href="lib/xsl/aspect/artifactbrowser/item-view.xsl"/>
     <xsl:import href="lib/xsl/aspect/artifactbrowser/community-list.xsl"/>

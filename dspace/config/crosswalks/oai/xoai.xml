@@ -28,6 +28,7 @@
             <Format ref="etdms"/>
             <Format ref="oai_etdms"/>
             <Format ref="mods"/>
+            <Format ref="musicmods"/>
             <Format ref="qdc"/>
             <Format ref="marc"/>
             <Format ref="uketd_dc"/>
@@ -146,6 +147,12 @@
         <Format id="mods">
             <Prefix>mods</Prefix>
             <XSLT>metadataFormats/mods.xsl</XSLT>
+            <Namespace>http://www.loc.gov/mods/v3</Namespace>
+            <SchemaLocation>http://www.loc.gov/standards/mods/v3/mods-3-1.xsd</SchemaLocation>
+        </Format>
+        <Format id="musicmods">
+            <Prefix>musicmods</Prefix>
+            <XSLT>metadataFormats/musicmods.xsl</XSLT>
             <Namespace>http://www.loc.gov/mods/v3</Namespace>
             <SchemaLocation>http://www.loc.gov/standards/mods/v3/mods-3-1.xsd</SchemaLocation>
         </Format>

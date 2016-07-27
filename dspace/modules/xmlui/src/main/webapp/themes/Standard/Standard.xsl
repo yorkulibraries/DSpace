@@ -27,11 +27,53 @@
 	exclude-result-prefixes="i18n dri mets xlink xsl dim xhtml mods dc">
 
     <xsl:import href="../Mirage/Mirage.xsl"/>
-    <xsl:import href="lib/xsl/core/navigation.xsl"/>
-    <xsl:import href="lib/xsl/core/page-structure.xsl"/>
     <xsl:import href="lib/xsl/aspect/artifactbrowser/item-list.xsl"/>
     <xsl:import href="lib/xsl/aspect/artifactbrowser/item-view.xsl"/>
     <xsl:import href="lib/xsl/aspect/artifactbrowser/community-list.xsl"/>
     <xsl:output indent="yes"/>
-    
+
+    <xsl:template name="buildFooter">
+        <div id="ds-footer-wrapper">
+            <div id="ds-footer">
+                <div id="ds-footer-left">
+                    <a href="http://www.dspace.org/" target="_blank">DSpace software</a> copyright&#160;&#169;&#160;2002-2015&#160; <a href="http://www.duraspace.org/" target="_blank">DuraSpace</a>
+                </div>
+                <div id="ds-footer-right">
+                    <span class="theme-by">Theme by&#160;</span>
+                    <a title="@mire NV" target="_blank" href="http://atmire.com" id="ds-footer-logo-link">
+                    <span id="ds-footer-logo">&#160;</span>
+                    </a>
+                </div>
+                <div id="ds-footer-links">
+                    <a>
+                        <xsl:attribute name="href">
+                            <xsl:value-of
+                                    select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                            <xsl:text>/contact</xsl:text>
+                        </xsl:attribute>
+                        <i18n:text>xmlui.dri2xhtml.structural.contact-link</i18n:text>
+                    </a>
+                    <xsl:text> | </xsl:text>
+                    <a>
+                        <xsl:attribute name="href">
+                            <xsl:value-of
+                                    select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                            <xsl:text>/feedback</xsl:text>
+                        </xsl:attribute>
+                        <i18n:text>xmlui.dri2xhtml.structural.feedback-link</i18n:text>
+                    </a>
+                </div>
+                <div id="yorkspace-copyright-notice">All items in the YorkSpace institutional repository are protected by copyright, with all rights reserved except where explicitly noted.</div>
+                <!--Invisible link to HTML sitemap (for search engines) -->
+                <a class="hidden">
+                    <xsl:attribute name="href">
+                        <xsl:value-of
+                                select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                        <xsl:text>/htmlmap</xsl:text>
+                    </xsl:attribute>
+                    <xsl:text>&#160;</xsl:text>
+                </a>
+            </div>
+        </div>
+    </xsl:template>
 </xsl:stylesheet>

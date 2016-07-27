@@ -28,6 +28,16 @@
 
     <xsl:import href="../Standard/Standard.xsl"/>
     <xsl:output indent="yes"/>
-    
+
+    <xsl:template match="dri:div/dri:head" priority="1">
+        <xsl:variable name="itemDivision">
+            <xsl:value-of select="../@n"/>
+        </xsl:variable>
+        <xsl:if test="$itemDivision='item-view'">
+            <xsl:call-template name="cc-license">
+                <xsl:with-param name="metadataURL" select="../dri:referenceSet/dri:reference/@url"/>
+            </xsl:call-template>
+        </xsl:if>
+    </xsl:template> 
 
 </xsl:stylesheet>

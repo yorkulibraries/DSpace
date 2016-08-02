@@ -16,6 +16,7 @@
 <name-map collection-handle="10315/1478" form-name="ascimages"/>
 <name-map collection-handle="10315/581" form-name="ascimages"/>
 <name-map collection-handle="10315/8004" form-name="ascsheetmusic"/>
+<name-map collection-handle="10315/27659" form-name="etd"/> <!-- Administration -->
 </form-map>
 <!-- The form-definitions map lays out the detailed definition of all the -->
 <!-- submission forms.Each separate form set has a unique name as an      -->
@@ -149,7 +150,7 @@ Enter: 978-1-55014-521-2</hint>
 <repeatable>true</repeatable>
 <label>Abstract</label>
 <input-type>textarea</input-type>
-<hint> Copy abstract from article. Double check for errors in OCR. 
+<hint> Copy abstract from article. Double check for errors in OCR.
 Add a separate abstract for each langauage in which the abstract is available.</hint>
 <required></required>
 </field>
@@ -228,7 +229,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
 <repeatable>false</repeatable>
 <label>Citation</label>
 <input-type>textarea</input-type>
-<hint>Enter a standard citation for the previously issued instance of this item. 
+<hint>Enter a standard citation for the previously issued instance of this item.
 If the item is a journal article, enter title of journal, iolume, issue, year and page numbers here.
 Example:  Journal of the American Society for Information Science and Technology 59.8 (2008): 1331-46.</hint>
 <required></required>
@@ -296,7 +297,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
 <repeatable>true</repeatable>
 <label>Abstract</label>
 <input-type>textarea</input-type>
-<hint> Enter the abstract of the item below. 
+<hint> Enter the abstract of the item below.
 Add a separate abstract for each langauage in which the abstract is available.</hint>
 <required></required>
 </field>
@@ -362,6 +363,138 @@ Add a separate abstract for each langauage in which the abstract is available.</
 </field>
 </page>
 </form>
+<!-- ETDs -->
+<form name="etd">
+<page number="1">
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>creator</dc-element>
+<dc-qualifier></dc-qualifier>
+<repeatable>true</repeatable>
+<label>Author</label>
+<input-type>name</input-type>
+<hint>Enter the names of the author of this item below.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>title</dc-element>
+<dc-qualifier></dc-qualifier>
+<repeatable>false</repeatable>
+<label>Title</label>
+<input-type>textarea</input-type>
+<hint>Enter the main title of the item.</hint>
+<required>You must enter a main title for this item.</required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>contributor</dc-element>
+<dc-qualifier>advisor</dc-qualifier>
+<repeatable>true</repeatable>
+<label>Supervisor</label>
+<input-type>name</input-type>
+<hint>Enter the names of the supervisor(s) for the ETD below.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>date</dc-element>
+<dc-qualifier>copyright</dc-qualifier>
+<repeatable>false</repeatable>
+<label>Date of document</label>
+<input-type>date</input-type>
+<hint>Please give the date listed on the title page of the ETD.</hint>
+<required>You must enter at least the year.</required>
+</field>
+<!-- <field>
+<dc-schema>dc</dc-schema>
+<dc-element>publisher</dc-element>
+<dc-qualifier></dc-qualifier>
+<repeatable>false</repeatable>
+<label>Publisher</label>
+<input-type>onebox</input-type>
+<hint>Enter the name of the publisher of the previously issued instance of this item.</hint>
+<required></required>
+</field> -->
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>degree</dc-element>
+<dc-qualifier>discipline</dc-qualifier>
+<repeatable>false</repeatable>
+<label>Program name</label>
+<input-type>textarea</input-type>
+<hint>These are defined by FGS and usually correspond with the</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>identifier</dc-element>
+<dc-qualifier></dc-qualifier>
+<!-- An input-type of qualdrop_value MUST be marked as repeatable -->
+<repeatable>true</repeatable>
+<label>Identifiers</label>
+<input-type value-pairs-name="common_identifiers">qualdrop_value</input-type>
+<hint>If the item has any identification numbers or codes associated with
+it, please enter the types and the actual numbers or codes below.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>type</dc-element>
+<dc-qualifier></dc-qualifier>
+<repeatable>true</repeatable>
+<label>Type</label>
+<input-type value-pairs-name="common_types">dropdown</input-type>
+<hint> Select the type(s) of content of the item. To select more than one value in the list, you may have to hold down the "CTRL" or "Shift" key.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>language</dc-element>
+<dc-qualifier>iso</dc-qualifier>
+<repeatable>false</repeatable>
+<label>Language</label>
+<input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+<hint>Select the language of the main content of the item.  If the language does not appear in the list below, please select 'Other'.  If the content does not really have a language (for example, if it is a dataset or an image) please select 'N/A'.</hint>
+<required></required>
+</field>
+</page>
+<page number="2">
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>subject</dc-element>
+<dc-qualifier></dc-qualifier>
+<!-- An input-type of twobox MUST be marked as repeatable -->
+<repeatable>true</repeatable>
+<label>Subject Keywords</label>
+<input-type>twobox</input-type>
+<hint> Enter appropriate subject keywords or phrases below. </hint>
+<required></required>
+<vocabulary>srsc</vocabulary>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>description</dc-element>
+<dc-qualifier>abstract</dc-qualifier>
+<repeatable>true</repeatable>
+<label>Abstract</label>
+<input-type>textarea</input-type>
+<hint> Enter the abstract of the item below.
+Add a separate abstract for each langauage in which the abstract is available.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>rights</dc-element>
+<dc-qualifier></dc-qualifier>
+<repeatable></repeatable>
+<label>Rights statement</label>
+<input-type>textarea</input-type>
+<hint>Author owns copyright, except where explicitly noted. Please contact the author directly with licensing requests.</hint>
+<required></required>
+</field>
+</page>
+</form>
 <!-- MRPs for Dept. of History  -->
 <form name="mrp_history">
 <page number="1">
@@ -423,7 +556,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
 <repeatable>true</repeatable>
 <label>Abstract</label>
 <input-type>textarea</input-type>
-<hint> Enter the abstract of the item below. 
+<hint> Enter the abstract of the item below.
 Add a separate abstract for each langauage in which the abstract is available.</hint>
 <required></required>
 </field>
@@ -516,7 +649,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
 </form>
    <form name="ascimages">
      <page number="1">
-     
+
      <field>
 		 <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
@@ -524,12 +657,12 @@ Add a separate abstract for each langauage in which the abstract is available.</
          <repeatable>false</repeatable>
          <label>ASC Number</label>
          <input-type>onebox</input-type>
-         <hint> Example: ASC01213 
+         <hint> Example: ASC01213
 	Please obtain your ASC number from the ASC Image Log. (dc.identifier)
 	</hint>
          <required>You must enter a ASC Number for this item.</required>
        </field>
- 
+
        <field>
 		 <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
@@ -537,12 +670,12 @@ Add a separate abstract for each langauage in which the abstract is available.</
          <repeatable>true</repeatable>
          <label>Accession Number</label>
          <input-type>onebox</input-type>
-         <hint>Example: "1974-001 / 295 (1643)". 
+         <hint>Example: "1974-001 / 295 (1643)".
 Accession Number / Box # (File Number)
 If the item is SPCOLL, use the SPCOLL call number. (dc.identifier.citation)</hint>
          <required></required>
        </field>
-        
+
         <field>
 		 <dc-schema>dc</dc-schema>
          <dc-element>title</dc-element>
@@ -551,13 +684,13 @@ If the item is SPCOLL, use the SPCOLL call number. (dc.identifier.citation)</hin
          <label>Title</label>
          <input-type>onebox</input-type>
          <hint>Enter the main title of the item from the negative envelope or file for prints using “ : “ between clauses.
-Examples from negative envelopes: 
+Examples from negative envelopes:
 “Yorkville village : Escaped monkey recaptured”
 “Yorkville village : on a Friday night "after 4" “
 “Ronnie Hawkins : entertainer”</hint>
          <required>You must enter a main title for this item.</required>
        </field>
-       
+
        <field>
 		 <dc-schema>dc</dc-schema>
          <dc-element>title</dc-element>
@@ -568,7 +701,7 @@ Examples from negative envelopes:
          <hint>If the item has any alternative titles, please enter them below.</hint>
          <required></required>
        </field>
-       
+
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>contributor</dc-element>
@@ -600,11 +733,11 @@ Please give the date of physical item creation below.  You can leave out the day
          <label>Date (free text notes on date)</label>
          <input-type>onebox</input-type>
 <hint>This field can be used to qualify your decision for your “Date of Item Creation”.
-Use this to fill in other date related information, such as date published, or dates that you are unsure of. You can use square brackes, circa notes, n.d. etc. becuse this is a free text field.  
+Use this to fill in other date related information, such as date published, or dates that you are unsure of. You can use square brackes, circa notes, n.d. etc. becuse this is a free text field.
 Take care to describe what you're entering.</hint>
          <required></required>
        </field>
-	
+
 	<field>
 		 <dc-schema>dc</dc-schema>
          <dc-element>publisher</dc-element>
@@ -615,7 +748,7 @@ Take care to describe what you're entering.</hint>
          <hint>If item was previously published, enter publisher name here.</hint>
          <required></required>
        </field>
-       
+
 	<field>
 		 <dc-schema>dc</dc-schema>
          <dc-element>format</dc-element>
@@ -626,7 +759,7 @@ Take care to describe what you're entering.</hint>
          <hint>Enter format-related information, take care to describe using RAD if possible. Example: 1 photograph : b&amp;w negative ; 35m</hint>
          <required></required>
        </field>
-       
+
        <field>
 		 <dc-schema>dc</dc-schema>
          <dc-element>relation</dc-element>
@@ -637,7 +770,7 @@ Take care to describe what you're entering.</hint>
          <hint>Example: "One negative (#4A-5) scanned out of 11 in assignment".</hint>
          <required></required>
        </field>
-       
+
      <field>
 		 <dc-schema>dc</dc-schema>
          <dc-element>relation</dc-element>
@@ -647,11 +780,11 @@ Take care to describe what you're entering.</hint>
          <input-type>onebox</input-type>
          <hint>If the item is archival, please enter the name of the fonds.
 Example: "Toronto Telegram fonds, F0477”.
-If the item is not archival in nature, enter the citation here.  
+If the item is not archival in nature, enter the citation here.
 For example, if the item is a plate from a book, use this field to enter the name of the book.</hint>
          <required></required>
-       </field>  
-       
+       </field>
+
        <field>
 		 <dc-schema>dc</dc-schema>
          <dc-element>relation</dc-element>
@@ -664,8 +797,8 @@ Example: http://archivesfa.library.yorku.ca/fonds/ON00370-f0000433.htm
 If the item is not archival in nature, please enter a link to the item in VuFind, if applicable.
 </hint>
          <required></required>
-       </field>  
-       
+       </field>
+
        <field>
 		 <dc-schema>dc</dc-schema>
          <dc-element>relation</dc-element>
@@ -673,9 +806,9 @@ If the item is not archival in nature, please enter a link to the item in VuFind
          <repeatable>true</repeatable>
          <label>Series name</label>
          <input-type value-pairs-name="asc_series_name">dropdown</input-type>
-         <hint>Use this field to group together exhibits. 
-For example, by selecting: "York50Photos" you will enable this image to be browsed by the York50Photos series in YorkSpace. 
-A controlled vocabulary is provided in this drop down list. 
+         <hint>Use this field to group together exhibits.
+For example, by selecting: "York50Photos" you will enable this image to be browsed by the York50Photos series in YorkSpace.
+A controlled vocabulary is provided in this drop down list.
 To select more than one value in the list, you may need to hold down the "CTRL" or "SHIFT" key.
 Please email akosavic@yorku.ca to add another series name.</hint>
          <required></required>
@@ -717,7 +850,7 @@ Please email akosavic@yorku.ca to add another series name.</hint>
          <required></required>
          <vocabulary>srsc</vocabulary>
        </field>
-       
+
 	<field>
 		 <dc-schema>dc</dc-schema>
          <dc-element>description</dc-element>
@@ -728,7 +861,7 @@ Please email akosavic@yorku.ca to add another series name.</hint>
          <hint>Describe the image in detail here. </hint>
          <required></required>
        </field>
-      
+
        <field>
 		 <dc-schema>dc</dc-schema>
          <dc-element>description</dc-element>
@@ -747,12 +880,12 @@ Please email akosavic@yorku.ca to add another series name.</hint>
          <repeatable>true</repeatable>
          <label>Sponsors</label>
          <input-type value-pairs-name="asc_sponsors">dropdown</input-type>
-         <hint> Select the name(s) of sponsor(s) from the drop down box. 
+         <hint> Select the name(s) of sponsor(s) from the drop down box.
 To select more than one value, you may need to hold down the "CTRL" or "Shift" key.
 Please contact akosavic@yorku.ca to add another sponsor to the controlled vocabulary.</hint>
          <required></required>
        </field>
-       
+
        <field>
           <dc-schema>dc</dc-schema>
          <dc-element>rights</dc-element>
@@ -760,7 +893,7 @@ Please contact akosavic@yorku.ca to add another sponsor to the controlled vocabu
          <repeatable>true</repeatable>
          <label>Rights information</label>
          <input-type value-pairs-name="asc_rights">dropdown</input-type>
-         <hint>Please select the appropriate rights information.  
+         <hint>Please select the appropriate rights information.
 Contact akosavic@yorku.ca to other options to the controlled vocabulary.</hint>
          <required></required>
        </field>
@@ -769,7 +902,7 @@ Contact akosavic@yorku.ca to other options to the controlled vocabulary.</hint>
 <!-- Sheet Music Mapping -->
    <form name="ascsheetmusic">
      <page number="1">
-     
+
      <field>
 	 <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
@@ -777,8 +910,8 @@ Contact akosavic@yorku.ca to other options to the controlled vocabulary.</hint>
          <repeatable>false</repeatable>
          <label>SMC/JAC/ASC Number</label>
          <input-type>onebox</input-type>
-         <hint>Please obtain your identifer from the folder or item slip. 
-Example: SMC0014 
+         <hint>Please obtain your identifer from the folder or item slip.
+Example: SMC0014
 	</hint>
          <required>You must enter an identifier for this item.</required>
        </field>
@@ -810,12 +943,12 @@ Example: SMC0014
          <repeatable>true</repeatable>
          <label>Personal author, Performer</label>
          <input-type>onebox</input-type>
-         <hint>Enter each author in their own box. Do not include comma after first name. 
-Do not include date of birth. If qualifier (ie. lyricist) is provided, enclose in square brackets with one space after name. 
+         <hint>Enter each author in their own box. Do not include comma after first name.
+Do not include date of birth. If qualifier (ie. lyricist) is provided, enclose in square brackets with one space after name.
 Example: Bayly, Thomas Haynes [lyricist]</hint>
          <required>test</required>
        </field>
-	
+
 <field>
 	 <dc-schema>dc</dc-schema>
          <dc-element>publisher</dc-element>
@@ -834,7 +967,7 @@ Example: Bayly, Thomas Haynes [lyricist]</hint>
          <repeatable>false</repeatable>
          <label>Date</label>
          <input-type>onebox</input-type>
-         <hint>Get from Publication Info. Only enter date if it exists and is not in brackets. Enter yyyy only. 
+         <hint>Get from Publication Info. Only enter date if it exists and is not in brackets. Enter yyyy only.
 Example: 1889</hint>
          <required></required>
        </field>
@@ -908,14 +1041,14 @@ If JAC: select John Arpin Sheet Music Collection</hint>
          <repeatable>true</repeatable>
          <label>Rights information</label>
          <input-type value-pairs-name="asc_rights">dropdown</input-type>
-         <hint>Please select the rights information so that this field is populated.  
+         <hint>Please select the rights information so that this field is populated.
 </hint>
          <required></required>
        </field>
      </page>
 
      <page number="2">
-     
+
 <field>
 	 <dc-schema>dc</dc-schema>
          <dc-element>relation</dc-element>
@@ -925,7 +1058,7 @@ If JAC: select John Arpin Sheet Music Collection</hint>
          <input-type>onebox</input-type>
          <hint>Ignore this unless provided in catalogue record.</hint>
          <required></required>
-       </field>  
+       </field>
        <field>
 	<dc-schema>dc</dc-schema>
          <dc-element>relation</dc-element>
@@ -938,7 +1071,7 @@ Example: http://archivesfa.library.yorku.ca/fonds/ON00370-f0000433.htm
 If the item is not archival in nature, please enter a link to the item in VuFind, if applicable.
 </hint>
          <required></required>
-       </field>  
+       </field>
      </page>
    </form>
 
@@ -1173,7 +1306,7 @@ If the item is not archival in nature, please enter a link to the item in VuFind
        <displayed-value>Allan Robb Fleming Digitization Project</displayed-value>
        <stored-value>Allan Robb Fleming Digitization Project</stored-value>
      </pair>
-<pair>     
+<pair>
        <displayed-value>Toronto Telegram</displayed-value>
        <stored-value>Toronto Telegram</stored-value>
      </pair>

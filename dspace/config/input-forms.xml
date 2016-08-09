@@ -1323,6 +1323,16 @@ If the item is not archival in nature, please enter a link to the item in VuFind
 <stored-value>other</stored-value>
 </pair>
 </value-pairs>
+<value-pairs value-pairs-name="etd_degree_level" dc-term="degree_level">
+<pair>
+  <displayed-value>Doctoral</displayed-value>
+  <stored-value>Doctoral</stored-value>
+</pair>
+<pair>
+  <displayed-value>Master's</displayed-value>
+  <stored-value>Master's</stored-value>
+</pair>
+</value-pairs>
 <value-pairs value-pairs-name="mrp_degree_level" dc-term="degree_level">
 <pair>
 <displayed-value>master's</displayed-value>

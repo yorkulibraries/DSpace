@@ -538,6 +538,36 @@ Add a separate abstract for each langauage in which the abstract is available.</
 <required></required>
 </field>
 <field>
+  <dc-schema>dc</dc-schema>
+  <dc-element>degree/dc-element>
+  <dc-qualifier>name</dc-qualifier>
+  <repeatable>false</repeatable>
+  <label>Degree Name</label>
+  <input-type value-pairs-name="etd_degee_name">dropdown</input-type>
+  <hint>Choose the appropriate degree name.</hint>
+  <required></required>
+</field>
+<field>
+  <dc-schema>dc</dc-schema>
+  <dc-element>degree/dc-element>
+  <dc-qualifier>level</dc-qualifier>
+  <repeatable>false</repeatable>
+  <label>Degree Name</label>
+  <input-type value-pairs-name="etd_degee_level">dropdown</input-type>
+  <hint>Choose the appropriate degree level.</hint>
+  <required></required>
+</field>
+<field>
+  <dc-schema>dc</dc-schema>
+  <dc-element>degree/dc-element>
+  <dc-qualifier>discipline</dc-qualifier>
+  <repeatable>false</repeatable>
+  <label>Degree Name</label>
+  <input-type value-pairs-name="etd_degee_discipline">dropdown</  input-type>
+  <hint>Choose the appropriate degree discipline.</hint>
+  <required></required>
+</field>
+<field>
 <dc-schema>dc</dc-schema>
 <dc-element>rights</dc-element>
 <dc-qualifier></dc-qualifier>

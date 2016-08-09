@@ -1333,6 +1333,48 @@ If the item is not archival in nature, please enter a link to the item in VuFind
   <stored-value>Master's</stored-value>
 </pair>
 </value-pairs>
+<value-pairs value-pairs-name="etd_degree_name" dc-term="degree_name">
+<pair>
+  <displayed-value>LLM - Master of Laws</displayed-value>
+  <stored-value>LLM - Master of Laws</stored-value>
+</pair>
+<pair>
+  <displayed-value>MA - Master of Arts</displayed-value>
+  <stored-value>MA - Master of Arts</stored-value>
+</pair>
+<pair>
+  <displayed-value>MASc - Master of Applied Science</displayed-value>
+  <stored-value>MASc - Master of Applied Science</stored-value>
+</pair>
+<pair>
+  <displayed-value>MDes - Master of Design</displayed-value>
+  <stored-value>MDes - Master of Design</stored-value>
+</pair>
+<pair>
+  <displayed-value>MEd - Master of Education</displayed-value>
+  <stored-value>MEd - Master of Education</stored-value>
+</pair>
+<pair>
+  <displayed-value>MES - Master in Environmental Studies</displayed-value>
+  <stored-value>MES - Master in Environmental Studies</stored-value>
+</pair>
+<pair>
+  <displayed-value>MFA - Master of Fine Arts</displayed-value>
+  <stored-value>MFA - Master of Fine Arts</stored-value>
+</pair>
+<pair>
+  <displayed-value>MSc - Master of Science</displayed-value>
+  <stored-value>MSc - Master of Science</stored-value>
+</pair>
+<pair>
+  <displayed-value>MScN - Master of Science in Nursing</displayed-value>
+  <stored-value>MScN - Master of Science in Nursing</stored-value>
+</pair>
+<pair>
+  <displayed-value>PhD - Doctor of Philosophy</displayed-value>
+  <stored-value>PhD - Doctor of Philosophy</stored-value>
+</pair>
+</value-pairs>
 <value-pairs value-pairs-name="mrp_degree_level" dc-term="degree_level">
 <pair>
 <displayed-value>master's</displayed-value>

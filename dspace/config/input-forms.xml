@@ -1375,6 +1375,224 @@ If the item is not archival in nature, please enter a link to the item in VuFind
   <stored-value>PhD - Doctor of Philosophy</stored-value>
 </pair>
 </value-pairs>
+<value-pairs value-pairs-name="etd_degree_discipline" dc-term="degree_discipline">
+<pair>
+  <displayed-value>Administration</displayed-value>
+  <stored-value>Administration</stored-value>
+</pair>
+<pair>
+  <displayed-value>Applied and Industrial Mathematics</displayed-value>
+  <stored-value>Applied and Industrial Mathematics</stored-value>
+</pair>
+<pair>
+  <displayed-value>Art History and Visual Culture</displayed-value>
+  <stored-value>Art History and Visual Culture</stored-value>
+</pair>
+<pair>
+  <displayed-value>Biology</displayed-value>
+  <stored-value>Biology</stored-value>
+</pair>
+<pair>
+  <displayed-value>Chemistry</displayed-value>
+  <stored-value>Chemistry</stored-value>
+</pair>
+<pair>
+  <displayed-value>Cinema and Media Studies</displayed-value>
+  <stored-value>Cinema and Media Studies</stored-value>
+</pair>
+<pair>
+  <displayed-value>Communication &amp; Culture, Joint Program with Ryerson University</displayed-value>
+  <stored-value>Communication &amp; Culture, Joint Program with Ryerson University</stored-value>
+</pair>
+<pair>
+  <displayed-value>Computer Engineering</displayed-value>
+  <stored-value>Computer Engineering</stored-value>
+</pair>
+<pair>
+  <displayed-value>Computer Science</displayed-value>
+  <stored-value>Computer Science</stored-value>
+</pair>
+<pair>
+  <displayed-value>Critical Disability Studies</displayed-value>
+  <stored-value>Critical Disability Studies</stored-value>
+</pair>
+<pair>
+  <displayed-value>Dance</displayed-value>
+  <stored-value>Dance</stored-value>
+</pair>
+<pair>
+  <displayed-value>Dance Studies</displayed-value>
+  <stored-value>Dance Studies</stored-value>
+</pair>
+<pair>
+  <displayed-value>Design</displayed-value>
+  <stored-value>Design</stored-value>
+</pair>
+<pair>
+  <displayed-value>Development Studies</displayed-value>
+  <stored-value>Development Studies</stored-value>
+</pair>
+<pair>
+  <displayed-value>Earth &amp; Space Science</displayed-value>
+  <stored-value>Earth &amp; Space Science</stored-value>
+</pair>
+<pair>
+  <displayed-value>Economics</displayed-value>
+  <stored-value>Economics</stored-value>
+</pair>
+<pair>
+  <displayed-value>Education</displayed-value>
+  <stored-value>Education</stored-value>
+</pair>
+<pair>
+  <displayed-value>English</displayed-value>
+  <stored-value>English</stored-value>
+</pair>
+<pair>
+  <displayed-value>Environmental Studies</displayed-value>
+  <stored-value>Environmental Studies</stored-value>
+</pair>
+<pair>
+  <displayed-value>Etudes Francaises</displayed-value>
+  <stored-value>Etudes Francaises</stored-value>
+</pair>
+<pair>
+  <displayed-value>Film And Video</displayed-value>
+  <stored-value>Film And Video</stored-value>
+</pair>
+<pair>
+  <displayed-value>Geography</displayed-value>
+  <stored-value>Geography</stored-value>
+</pair>
+<pair>
+  <displayed-value>Health</displayed-value>
+  <stored-value>Health</stored-value>
+</pair>
+<pair>
+  <displayed-value>History</displayed-value>
+  <stored-value>History</stored-value>
+</pair>
+<pair>
+  <displayed-value>Humanities</displayed-value>
+  <stored-value>Humanities</stored-value>
+</pair>
+<pair>
+  <displayed-value>Human Resources Management</displayed-value>
+  <stored-value>Human Resources Management</stored-value>
+</pair>
+<pair>
+  <displayed-value>Information Systems and Technology</displayed-value>
+  <stored-value>Information Systems and Technology</stored-value>
+</pair>
+<pair>
+  <displayed-value>Interdisciplinary Studies</displayed-value>
+  <stored-value>Interdisciplinary Studies</stored-value>
+</pair>
+<pair>
+  <displayed-value>Kinesiology &amp; Health Science</displayed-value>
+  <stored-value>Kinesiology &amp; Health Science</stored-value>
+</pair>
+<pair>
+  <displayed-value>Law</displayed-value>
+  <stored-value>Law</stored-value>
+</pair>
+<pair>
+  <displayed-value>Linguistics and Applied Linguistics (Applied Linguistics)</displayed-value>
+  <stored-value>Linguistics and Applied Linguistics (Applied Linguistics)</stored-value>
+</pair>
+<pair>
+  <displayed-value>Linguistics and Applied Linguistics (Theoretical Linguistics)</displayed-value>
+  <stored-value>Linguistics and Applied Linguistics (Theoretical Linguistics)</stored-value>
+</pair>
+<pair>
+  <displayed-value>Mathematics &amp; Statistics</displayed-value>
+  <stored-value>Mathematics &amp; Statistics</stored-value>
+</pair>
+<pair>
+  <displayed-value>Music</displayed-value>
+  <stored-value>Music</stored-value>
+</pair>
+<pair>
+  <displayed-value>Nursing</displayed-value>
+  <stored-value>Nursing</stored-value>
+</pair>
+<pair>
+  <displayed-value>Philosophy</displayed-value>
+  <stored-value>Philosophy</stored-value>
+</pair>
+<pair>
+  <displayed-value>Physics and Astronomy</displayed-value>
+  <stored-value>Physics and Astronomy</stored-value>
+</pair>
+<pair>
+  <displayed-value>Political Science</displayed-value>
+  <stored-value>Political Science</stored-value>
+</pair>
+<pair>
+  <displayed-value>Psychology (Functional Area: Brain, Behaviour &amp; Cognitive Science</displayed-value>
+  <stored-value>Psychology (Functional Area: Brain, Behaviour &amp; Cognitive Science</stored-value>
+</pair>
+<pair>
+  <displayed-value>Psychology (Functional Area: Clinical-Developmental)</displayed-value>
+  <stored-value>Psychology (Functional Area: Clinical-Developmental)</stored-value>
+</pair>
+<pair>
+  <displayed-value>Psychology (Functional Area: Clinical Psychology)</displayed-value>
+  <stored-value>Psychology (Functional Area: Clinical Psychology)</stored-value>
+</pair>
+<pair>
+  <displayed-value>Psychology (Functional Area: Developmental &amp; Cognitive Processes)</displayed-value>
+  <stored-value>Psychology (Functional Area: Developmental &amp; Cognitive Processes)</stored-value>
+</pair>
+<pair>
+  <displayed-value>Psychology (Functional Area: Developmental Science)</displayed-value>
+  <stored-value>Psychology (Functional Area: Developmental Science)</stored-value>
+</pair>
+<pair>
+  <displayed-value>Psychology (Functional Area: History and Theory)</displayed-value>
+  <stored-value>Psychology (Functional Area: History and Theory)</stored-value>
+</pair>
+<pair>
+  <displayed-value>Psychology (Functional Area: Quantitative Methods)</displayed-value>
+  <stored-value>Psychology (Functional Area: Quantitative Methods)</stored-value>
+</pair>
+<pair>
+  <displayed-value>Psychology (Functional Area: Social and Personality)</displayed-value>
+  <stored-value>Psychology (Functional Area: Social and Personality)</stored-value>
+</pair>
+<pair>
+  <displayed-value>Social Anthropology</displayed-value>
+  <stored-value>Social Anthropology</stored-value>
+</pair>
+<pair>
+  <displayed-value>Social &amp; Political Thought</displayed-value>
+  <stored-value>Social &amp; Political Thought</stored-value>
+</pair>
+<pair>
+  <displayed-value>Social Work</displayed-value>
+  <stored-value>Social Work</stored-value>
+</pair>
+<pair>
+  <displayed-value>Sociology</displayed-value>
+  <stored-value>Sociology</stored-value>
+</pair>
+<pair>
+  <displayed-value>Theatre and Performance Studies</displayed-value>
+  <stored-value>Theatre and Performance Studies</stored-value>
+</pair>
+<pair>
+  <displayed-value>Translation Studies</displayed-value>
+  <stored-value>Translation Studies</stored-value>
+</pair>
+<pair>
+  <displayed-value>Visual Arts</displayed-value>
+  <stored-value>Visual Arts</stored-value>
+</pair>
+<pair>
+  <displayed-value>Women's Studies</displayed-value>
+  <stored-value>Women's Studies</stored-value>
+</pair>
+</value-pairs>
 <value-pairs value-pairs-name="mrp_degree_level" dc-term="degree_level">
 <pair>
 <displayed-value>master's</displayed-value>

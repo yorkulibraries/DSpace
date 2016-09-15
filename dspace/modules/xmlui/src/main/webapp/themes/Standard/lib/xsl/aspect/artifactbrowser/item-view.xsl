@@ -83,18 +83,12 @@
 			</xsl:otherwise>
 		</xsl:choose>
 
-<h2>Article Level Metrics</h2>
-<xsl:if test='confman:getProperty("altmetrics", "altmetric.enabled") and ($identifier_doi or $identifier_handle)'>
-  <xsl:call-template name='impact-altmetric'/>
-</xsl:if>
-<xsl:if test='confman:getProperty("altmetrics", "plumx.enabled") and $identifier_doi'>
-  <xsl:call-template name='impact-plumx'/>
-</xsl:if>
-<div class="clearfix"><br/></div>
+    <xsl:call-template name="yulArticleMetrics" />
 
 		<!-- Generate the Creative Commons license information from the file section (DSpace deposit license hidden by default)-->
 		<xsl:apply-templates select="./mets:fileSec/mets:fileGrp[@USE='CC-LICENSE']"/>
 	</xsl:template>
+
 	<xsl:template match="dim:dim" mode="itemSummaryView-DIM">
 		<table class="ds-includeSet-table summarytable">
 			<xsl:call-template name="itemSummaryView-DIM-fields"/>
@@ -917,4 +911,20 @@
 
       </div>
   </xsl:template>	
+  
+  <xsl:template name="yulArticleMetrics">
+    <xsl:if test='(confman:getProperty("altmetrics", "altmetric.enabled") or confman:getProperty("altmetrics", "plumx.enabled")) and ($identifier_doi)'>
+      <div class="yul-article-metrics">
+        <h2>Article Level Metrics</h2>
+        <xsl:if test='confman:getProperty("altmetrics", "altmetric.enabled") and ($identifier_doi or $identifier_handle)'>
+          <xsl:call-template name='impact-altmetric'/>
+        </xsl:if>
+        <xsl:if test='confman:getProperty("altmetrics", "plumx.enabled") and $identifier_doi'>
+          <xsl:call-template name='impact-plumx'/>
+        </xsl:if>
+        <div class="clearfix"><br/></div>
+      </div>
+    </xsl:if>
+  </xsl:template>
+  
 </xsl:stylesheet>

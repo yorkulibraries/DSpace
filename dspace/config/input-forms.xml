@@ -13,6 +13,7 @@
 <name-map collection-handle="default" form-name="traditional"/>
 <name-map collection-handle="10315/2901" form-name="icos"/>
 <name-map collection-handle="10315/4519" form-name="mrp_history"/>
+<name-map collection-handle="10315/32399" form-name="mrp_history"/>
 <name-map collection-handle="10315/1478" form-name="ascimages"/>
 <name-map collection-handle="10315/581" form-name="ascimages"/>
 <name-map collection-handle="10315/8004" form-name="ascsheetmusic"/>
@@ -480,27 +481,28 @@ Add a separate abstract for each langauage in which the abstract is available.</
 <hint>These are defined by FGS and usually correspond with the</hint>
 <required></required>
 </field>
-<field>
+<!--<field>
 <dc-schema>dc</dc-schema>
 <dc-element>identifier</dc-element>
 <dc-qualifier></dc-qualifier>
-<!-- An input-type of qualdrop_value MUST be marked as repeatable -->
+ An input-type of qualdrop_value MUST be marked as repeatable 
 <repeatable>true</repeatable>
 <label>Identifiers</label>
 <input-type value-pairs-name="common_identifiers">qualdrop_value</input-type>
 <hint>If the item has any identification numbers or codes associated with
-it, please enter the types and the actual numbers or codes below.</hint>
+it, please enter the types and the actual numbers or codes below.</hint>Electronic Thesis or Dissertation
 <required></required>
-</field>
+</field>-->
 <field>
 <dc-schema>dc</dc-schema>
 <dc-element>type</dc-element>
 <dc-qualifier></dc-qualifier>
-<repeatable>true</repeatable>
+<repeatable>false</repeatable>
 <label>Type</label>
-<input-type value-pairs-name="common_types">dropdown</input-type>
+<input-type value-pairs-name="etd_type">list</input-type>
 <hint> Select the type(s) of content of the item. To select more than one value in the list, you may have to hold down the "CTRL" or "Shift" key.</hint>
 <required></required>
+<visibility>workflow</visibility>
 </field>
 <field>
 <dc-schema>dc</dc-schema>
@@ -1176,6 +1178,12 @@ If the item is not archival in nature, please enter a link to the item in VuFind
 <!-- stores the associated stored-values in the database.                  -->
 
 <form-value-pairs>
+<value-pairs value-pairs-name="etd_type" dc-term="type">
+<pair>
+<displayed-value>Electronic Thesis or Dissertation</displayed-value>
+<stored-value>Electronic Thesis or Dissertation</stored-value>
+</pair>
+</value-pairs>
 <value-pairs value-pairs-name="common_identifiers" dc-term="identifier">
 <pair>
 <displayed-value>ISSN</displayed-value>

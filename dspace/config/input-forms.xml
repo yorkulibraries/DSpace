@@ -471,7 +471,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
 <hint>Enter the name of the publisher of the previously issued instance of this item.</hint>
 <required></required>
 </field> -->
-<field>
+<!--<field>
 <dc-schema>dc</dc-schema>
 <dc-element>degree</dc-element>
 <dc-qualifier>discipline</dc-qualifier>
@@ -480,7 +480,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
 <input-type>textarea</input-type>
 <hint>These are defined by FGS and usually correspond with the</hint>
 <required></required>
-</field>
+</field>-->
 <!--<field>
 <dc-schema>dc</dc-schema>
 <dc-element>identifier</dc-element>
@@ -502,7 +502,7 @@ it, please enter the types and the actual numbers or codes below.</hint>Electron
 <input-type value-pairs-name="etd_type">list</input-type>
 <hint> Select the type(s) of content of the item. To select more than one value in the list, you may have to hold down the "CTRL" or "Shift" key.</hint>
 <required></required>
-<visibility>workflow</visibility>
+<visibility>submit</visibility>
 </field>
 <field>
 <dc-schema>dc</dc-schema>
@@ -554,7 +554,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
   <dc-element>degree</dc-element>
   <dc-qualifier>level</dc-qualifier>
   <repeatable>false</repeatable>
-  <label>Degree Name</label>
+  <label>Degree Level</label>
   <input-type value-pairs-name="etd_degree_level">dropdown</input-type>
   <hint>Choose the appropriate degree level.</hint>
   <required></required>
@@ -564,7 +564,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
   <dc-element>degree</dc-element>
   <dc-qualifier>discipline</dc-qualifier>
   <repeatable>false</repeatable>
-  <label>Degree Name</label>
+  <label>Degree Discipline</label>
   <input-type value-pairs-name="etd_degree_discipline">dropdown</input-type>
   <hint>Choose the appropriate degree discipline.</hint>
   <required></required>
@@ -573,11 +573,12 @@ Add a separate abstract for each langauage in which the abstract is available.</
 <dc-schema>dc</dc-schema>
 <dc-element>rights</dc-element>
 <dc-qualifier></dc-qualifier>
-<repeatable></repeatable>
+<repeatable>false</repeatable>
 <label>Rights statement</label>
-<input-type>textarea</input-type>
+<input-type value-pairs-name="etd_rights_none">list</input-type>
 <hint>Author owns copyright, except where explicitly noted. Please contact the author directly with licensing requests.</hint>
 <required></required>
+<visibility otherwise="readonly">submit</visibility>
 </field>
 </page>
 </form>
@@ -1182,6 +1183,12 @@ If the item is not archival in nature, please enter a link to the item in VuFind
 <pair>
 <displayed-value>Electronic Thesis or Dissertation</displayed-value>
 <stored-value>Electronic Thesis or Dissertation</stored-value>
+</pair>
+</value-pairs>
+<value-pairs value-pairs-name="etd_rights_none" dc-term="rights">
+<pair>
+  <displayed-value>Author owns copyright, except where explicitly noted. Please contact the author directly with licensing requests.</displayed-value>
+  <stored-value>Author owns copyright, except where explicitly noted. Please contact the author directly with licensing requests.</stored-value>
 </pair>
 </value-pairs>
 <value-pairs value-pairs-name="common_identifiers" dc-term="identifier">

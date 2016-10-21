@@ -429,7 +429,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
 <label>Author</label>
 <input-type>name</input-type>
 <hint>Enter the names of the author of this item below.</hint>
-<required></required>
+<required>Please include the primary scholar's name.</required>
 </field>
 <field>
 <dc-schema>dc</dc-schema>
@@ -449,7 +449,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
 <label>Supervisor</label>
 <input-type>name</input-type>
 <hint>Enter the names of the supervisor(s) for the ETD below.</hint>
-<required></required>
+<required>Please include the names of your supervisors.</required>
 </field>
 <field>
 <dc-schema>dc</dc-schema>
@@ -511,7 +511,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
   <dc-qualifier>name</dc-qualifier>
   <repeatable>false</repeatable>
   <label>Degree Name</label>
-  <input-type value-pairs-name="etd_degree_name">dropdown</input-type>
+  <input-type value-pairs-name="etd_degree_name">qualdrop_value</input-type>
   <hint>Choose the appropriate degree name.</hint>
   <required></required>
 </field>
@@ -521,7 +521,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
   <dc-qualifier>level</dc-qualifier>
   <repeatable>false</repeatable>
   <label>Degree Level</label>
-  <input-type value-pairs-name="etd_degree_level">dropdown</input-type>
+  <input-type value-pairs-name="etd_degree_level">qualdrop_value</input-type>
   <hint>Choose the appropriate degree level.</hint>
   <required></required>
 </field>
@@ -531,7 +531,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
   <dc-qualifier>discipline</dc-qualifier>
   <repeatable>false</repeatable>
   <label>Degree Discipline</label>
-  <input-type value-pairs-name="etd_degree_discipline">dropdown</input-type>
+  <input-type value-pairs-name="etd_degree_discipline">qualdrop_value</input-type>
   <hint>Choose the appropriate degree discipline.</hint>
   <required></required>
 </field>

@@ -511,7 +511,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
   <dc-qualifier>name</dc-qualifier>
   <repeatable>false</repeatable>
   <label>Degree Name</label>
-  <input-type value-pairs-name="etd_degree_name">qualdrop_value</input-type>
+  <input-type value-pairs-name="etd_degree_name">dropdown</input-type>
   <hint>Choose the appropriate degree name.</hint>
   <required></required>
 </field>
@@ -521,7 +521,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
   <dc-qualifier>level</dc-qualifier>
   <repeatable>false</repeatable>
   <label>Degree Level</label>
-  <input-type value-pairs-name="etd_degree_level">qualdrop_value</input-type>
+  <input-type value-pairs-name="etd_degree_level">dropdown</input-type>
   <hint>Choose the appropriate degree level.</hint>
   <required></required>
 </field>
@@ -531,7 +531,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
   <dc-qualifier>discipline</dc-qualifier>
   <repeatable>false</repeatable>
   <label>Degree Discipline</label>
-  <input-type value-pairs-name="etd_degree_discipline">qualdrop_value</input-type>
+  <input-type value-pairs-name="etd_degree_discipline">dropdown</input-type>
   <hint>Choose the appropriate degree discipline.</hint>
   <required></required>
 </field>
@@ -541,7 +541,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
 <dc-qualifier></dc-qualifier>
 <repeatable>false</repeatable>
 <label>Rights statement</label>
-<input-type value-pairs-name="etd_rights_none">list</input-type>
+<input-type>textarea</input-type>
 <hint>Author owns copyright, except where explicitly noted. Please contact the author directly with licensing requests.</hint>
 <required></required>
 <visibility>workflow</visibility>

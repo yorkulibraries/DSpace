@@ -13,10 +13,65 @@
 <name-map collection-handle="default" form-name="traditional"/>
 <name-map collection-handle="10315/2901" form-name="icos"/>
 <name-map collection-handle="10315/4519" form-name="mrp_history"/>
+<name-map collection-handle="10315/32399" form-name="mrp_history"/>
 <name-map collection-handle="10315/1478" form-name="ascimages"/>
 <name-map collection-handle="10315/581" form-name="ascimages"/>
 <name-map collection-handle="10315/8004" form-name="ascsheetmusic"/>
-<name-map collection-handle="10315/27659" form-name="etd"/> <!-- Administration -->
+<name-map collection-handle="10315/27659" form-name="etd"/>
+<name-map collection-handle="10315/30810" form-name="etd"/>
+<name-map collection-handle="10315/27637" form-name="etd"/>
+<name-map collection-handle="10315/27613" form-name="etd"/>
+<name-map collection-handle="10315/26546" form-name="etd"/>
+<name-map collection-handle="10315/30847" form-name="etd"/>
+<name-map collection-handle="10315/27559" form-name="etd"/>
+<name-map collection-handle="10315/30135" form-name="etd"/>
+<name-map collection-handle="10315/28572" form-name="etd"/>
+<name-map collection-handle="10315/28600" form-name="etd"/>
+<name-map collection-handle="10315/27682" form-name="etd"/>
+<name-map collection-handle="10315/27616" form-name="etd"/>
+<name-map collection-handle="10315/27709" form-name="etd"/>
+<name-map collection-handle="10315/28601" form-name="etd"/>
+<name-map collection-handle="10315/27626" form-name="etd"/>
+<name-map collection-handle="10315/28604" form-name="etd"/>
+<name-map collection-handle="10315/26544" form-name="etd"/>
+<name-map collection-handle="10315/27584" form-name="etd"/>
+<name-map collection-handle="10315/26311" form-name="etd"/>
+<name-map collection-handle="10315/28580" form-name="etd"/>
+<name-map collection-handle="10315/26545" form-name="etd"/>
+<name-map collection-handle="10315/27574" form-name="etd"/>
+<name-map collection-handle="10315/30328" form-name="etd"/>
+<name-map collection-handle="10315/27577" form-name="etd"/>
+<name-map collection-handle="10315/27599" form-name="etd"/>
+<name-map collection-handle="10315/30834" form-name="etd"/>
+<name-map collection-handle="10315/27588" form-name="etd"/>
+<name-map collection-handle="10315/27606" form-name="etd"/>
+<name-map collection-handle="10315/27572" form-name="etd"/>
+<name-map collection-handle="10315/26547" form-name="etd"/>
+<name-map collection-handle="10315/28605" form-name="etd"/>
+<name-map collection-handle="10315/30817" form-name="etd"/>
+<name-map collection-handle="10315/27569" form-name="etd"/>
+<name-map collection-handle="10315/26542" form-name="etd"/>
+<name-map collection-handle="10315/28619" form-name="etd"/>
+<name-map collection-handle="10315/27641" form-name="etd"/>
+<name-map collection-handle="10315/28582" form-name="etd"/>
+<name-map collection-handle="10315/26548" form-name="etd"/>
+<name-map collection-handle="10315/28606" form-name="etd"/>
+<name-map collection-handle="10315/27657" form-name="etd"/>
+<name-map collection-handle="10315/26543" form-name="etd"/>
+<name-map collection-handle="10315/26549" form-name="etd"/>
+<name-map collection-handle="10315/30365" form-name="etd"/>
+<name-map collection-handle="10315/27610" form-name="etd"/>
+<name-map collection-handle="10315/30363" form-name="etd"/>
+<name-map collection-handle="10315/27562" form-name="etd"/>
+<name-map collection-handle="10315/27675" form-name="etd"/>
+<name-map collection-handle="10315/27596" form-name="etd"/>
+<name-map collection-handle="10315/28581" form-name="etd"/>
+<name-map collection-handle="10315/27586" form-name="etd"/>
+<name-map collection-handle="10315/27647" form-name="etd"/>
+<name-map collection-handle="10315/27663" form-name="etd"/>
+<name-map collection-handle="10315/27620" form-name="etd"/>
+<name-map collection-handle="10315/27593" form-name="etd"/>
+<!-- Administration -->
 </form-map>
 <!-- The form-definitions map lays out the detailed definition of all the -->
 <!-- submission forms.Each separate form set has a unique name as an      -->
@@ -374,7 +429,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
 <label>Author</label>
 <input-type>name</input-type>
 <hint>Enter the names of the author of this item below.</hint>
-<required></required>
+<required>Please include the primary scholar's name.</required>
 </field>
 <field>
 <dc-schema>dc</dc-schema>
@@ -394,7 +449,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
 <label>Supervisor</label>
 <input-type>name</input-type>
 <hint>Enter the names of the supervisor(s) for the ETD below.</hint>
-<required></required>
+<required>Please include the names of your supervisors.</required>
 </field>
 <field>
 <dc-schema>dc</dc-schema>
@@ -406,47 +461,16 @@ Add a separate abstract for each langauage in which the abstract is available.</
 <hint>Please give the date listed on the title page of the ETD.</hint>
 <required>You must enter at least the year.</required>
 </field>
-<!-- <field>
-<dc-schema>dc</dc-schema>
-<dc-element>publisher</dc-element>
-<dc-qualifier></dc-qualifier>
-<repeatable>false</repeatable>
-<label>Publisher</label>
-<input-type>onebox</input-type>
-<hint>Enter the name of the publisher of the previously issued instance of this item.</hint>
-<required></required>
-</field> -->
-<field>
-<dc-schema>dc</dc-schema>
-<dc-element>degree</dc-element>
-<dc-qualifier>discipline</dc-qualifier>
-<repeatable>false</repeatable>
-<label>Program name</label>
-<input-type>textarea</input-type>
-<hint>These are defined by FGS and usually correspond with the</hint>
-<required></required>
-</field>
-<field>
-<dc-schema>dc</dc-schema>
-<dc-element>identifier</dc-element>
-<dc-qualifier></dc-qualifier>
-<!-- An input-type of qualdrop_value MUST be marked as repeatable -->
-<repeatable>true</repeatable>
-<label>Identifiers</label>
-<input-type value-pairs-name="common_identifiers">qualdrop_value</input-type>
-<hint>If the item has any identification numbers or codes associated with
-it, please enter the types and the actual numbers or codes below.</hint>
-<required></required>
-</field>
 <field>
 <dc-schema>dc</dc-schema>
 <dc-element>type</dc-element>
 <dc-qualifier></dc-qualifier>
-<repeatable>true</repeatable>
+<repeatable>false</repeatable>
 <label>Type</label>
-<input-type value-pairs-name="common_types">dropdown</input-type>
+<input-type>onebox</input-type>
 <hint> Select the type(s) of content of the item. To select more than one value in the list, you may have to hold down the "CTRL" or "Shift" key.</hint>
 <required></required>
+<visibility>workflow</visibility>
 </field>
 <field>
 <dc-schema>dc</dc-schema>
@@ -458,8 +482,6 @@ it, please enter the types and the actual numbers or codes below.</hint>
 <hint>Select the language of the main content of the item.  If the language does not appear in the list below, please select 'Other'.  If the content does not really have a language (for example, if it is a dataset or an image) please select 'N/A'.</hint>
 <required></required>
 </field>
-</page>
-<page number="2">
 <field>
 <dc-schema>dc</dc-schema>
 <dc-element>subject</dc-element>
@@ -484,14 +506,45 @@ Add a separate abstract for each langauage in which the abstract is available.</
 <required></required>
 </field>
 <field>
+  <dc-schema>dc</dc-schema>
+  <dc-element>degree</dc-element>
+  <dc-qualifier>name</dc-qualifier>
+  <repeatable>false</repeatable>
+  <label>Degree Name</label>
+  <input-type value-pairs-name="etd_degree_name">dropdown</input-type>
+  <hint>Choose the appropriate degree name.</hint>
+  <required></required>
+</field>
+<field>
+  <dc-schema>dc</dc-schema>
+  <dc-element>degree</dc-element>
+  <dc-qualifier>level</dc-qualifier>
+  <repeatable>false</repeatable>
+  <label>Degree Level</label>
+  <input-type value-pairs-name="etd_degree_level">dropdown</input-type>
+  <hint>Choose the appropriate degree level.</hint>
+  <required></required>
+</field>
+<field>
+  <dc-schema>dc</dc-schema>
+  <dc-element>degree</dc-element>
+  <dc-qualifier>discipline</dc-qualifier>
+  <repeatable>false</repeatable>
+  <label>Degree Discipline</label>
+  <input-type value-pairs-name="etd_degree_discipline">dropdown</input-type>
+  <hint>Choose the appropriate degree discipline.</hint>
+  <required></required>
+</field>
+<field>
 <dc-schema>dc</dc-schema>
 <dc-element>rights</dc-element>
 <dc-qualifier></dc-qualifier>
-<repeatable></repeatable>
+<repeatable>false</repeatable>
 <label>Rights statement</label>
 <input-type>textarea</input-type>
 <hint>Author owns copyright, except where explicitly noted. Please contact the author directly with licensing requests.</hint>
 <required></required>
+<visibility>workflow</visibility>
 </field>
 </page>
 </form>
@@ -1267,6 +1320,276 @@ If the item is not archival in nature, please enter a link to the item in VuFind
 <pair>
 <displayed-value>(Other)</displayed-value>
 <stored-value>other</stored-value>
+</pair>
+</value-pairs>
+<value-pairs value-pairs-name="etd_degree_level" dc-term="degree_level">
+<pair>
+  <displayed-value>Doctoral</displayed-value>
+  <stored-value>Doctoral</stored-value>
+</pair>
+<pair>
+  <displayed-value>Master's</displayed-value>
+  <stored-value>Master's</stored-value>
+</pair>
+</value-pairs>
+<value-pairs value-pairs-name="etd_degree_name" dc-term="degree_name">
+<pair>
+  <displayed-value>LLM - Master of Laws</displayed-value>
+  <stored-value>LLM - Master of Laws</stored-value>
+</pair>
+<pair>
+  <displayed-value>MA - Master of Arts</displayed-value>
+  <stored-value>MA - Master of Arts</stored-value>
+</pair>
+<pair>
+  <displayed-value>MASc - Master of Applied Science</displayed-value>
+  <stored-value>MASc - Master of Applied Science</stored-value>
+</pair>
+<pair>
+  <displayed-value>MDes - Master of Design</displayed-value>
+  <stored-value>MDes - Master of Design</stored-value>
+</pair>
+<pair>
+  <displayed-value>MEd - Master of Education</displayed-value>
+  <stored-value>MEd - Master of Education</stored-value>
+</pair>
+<pair>
+  <displayed-value>MES - Master in Environmental Studies</displayed-value>
+  <stored-value>MES - Master in Environmental Studies</stored-value>
+</pair>
+<pair>
+  <displayed-value>MFA - Master of Fine Arts</displayed-value>
+  <stored-value>MFA - Master of Fine Arts</stored-value>
+</pair>
+<pair>
+  <displayed-value>MSc - Master of Science</displayed-value>
+  <stored-value>MSc - Master of Science</stored-value>
+</pair>
+<pair>
+  <displayed-value>MScN - Master of Science in Nursing</displayed-value>
+  <stored-value>MScN - Master of Science in Nursing</stored-value>
+</pair>
+<pair>
+  <displayed-value>PhD - Doctor of Philosophy</displayed-value>
+  <stored-value>PhD - Doctor of Philosophy</stored-value>
+</pair>
+</value-pairs>
+<value-pairs value-pairs-name="etd_degree_discipline" dc-term="degree_discipline">
+<pair>
+  <displayed-value>Administration</displayed-value>
+  <stored-value>Administration</stored-value>
+</pair>
+<pair>
+  <displayed-value>Applied and Industrial Mathematics</displayed-value>
+  <stored-value>Applied and Industrial Mathematics</stored-value>
+</pair>
+<pair>
+  <displayed-value>Art History and Visual Culture</displayed-value>
+  <stored-value>Art History and Visual Culture</stored-value>
+</pair>
+<pair>
+  <displayed-value>Biology</displayed-value>
+  <stored-value>Biology</stored-value>
+</pair>
+<pair>
+  <displayed-value>Chemistry</displayed-value>
+  <stored-value>Chemistry</stored-value>
+</pair>
+<pair>
+  <displayed-value>Cinema and Media Studies</displayed-value>
+  <stored-value>Cinema and Media Studies</stored-value>
+</pair>
+<pair>
+  <displayed-value>Communication &amp; Culture, Joint Program with Ryerson University</displayed-value>
+  <stored-value>Communication &amp; Culture, Joint Program with Ryerson University</stored-value>
+</pair>
+<pair>
+  <displayed-value>Computer Engineering</displayed-value>
+  <stored-value>Computer Engineering</stored-value>
+</pair>
+<pair>
+  <displayed-value>Computer Science</displayed-value>
+  <stored-value>Computer Science</stored-value>
+</pair>
+<pair>
+  <displayed-value>Critical Disability Studies</displayed-value>
+  <stored-value>Critical Disability Studies</stored-value>
+</pair>
+<pair>
+  <displayed-value>Dance</displayed-value>
+  <stored-value>Dance</stored-value>
+</pair>
+<pair>
+  <displayed-value>Dance Studies</displayed-value>
+  <stored-value>Dance Studies</stored-value>
+</pair>
+<pair>
+  <displayed-value>Design</displayed-value>
+  <stored-value>Design</stored-value>
+</pair>
+<pair>
+  <displayed-value>Development Studies</displayed-value>
+  <stored-value>Development Studies</stored-value>
+</pair>
+<pair>
+  <displayed-value>Earth &amp; Space Science</displayed-value>
+  <stored-value>Earth &amp; Space Science</stored-value>
+</pair>
+<pair>
+  <displayed-value>Economics</displayed-value>
+  <stored-value>Economics</stored-value>
+</pair>
+<pair>
+  <displayed-value>Education</displayed-value>
+  <stored-value>Education</stored-value>
+</pair>
+<pair>
+  <displayed-value>English</displayed-value>
+  <stored-value>English</stored-value>
+</pair>
+<pair>
+  <displayed-value>Environmental Studies</displayed-value>
+  <stored-value>Environmental Studies</stored-value>
+</pair>
+<pair>
+  <displayed-value>Etudes Francaises</displayed-value>
+  <stored-value>Etudes Francaises</stored-value>
+</pair>
+<pair>
+  <displayed-value>Film And Video</displayed-value>
+  <stored-value>Film And Video</stored-value>
+</pair>
+<pair>
+  <displayed-value>Geography</displayed-value>
+  <stored-value>Geography</stored-value>
+</pair>
+<pair>
+  <displayed-value>Health</displayed-value>
+  <stored-value>Health</stored-value>
+</pair>
+<pair>
+  <displayed-value>History</displayed-value>
+  <stored-value>History</stored-value>
+</pair>
+<pair>
+  <displayed-value>Humanities</displayed-value>
+  <stored-value>Humanities</stored-value>
+</pair>
+<pair>
+  <displayed-value>Human Resources Management</displayed-value>
+  <stored-value>Human Resources Management</stored-value>
+</pair>
+<pair>
+  <displayed-value>Information Systems and Technology</displayed-value>
+  <stored-value>Information Systems and Technology</stored-value>
+</pair>
+<pair>
+  <displayed-value>Interdisciplinary Studies</displayed-value>
+  <stored-value>Interdisciplinary Studies</stored-value>
+</pair>
+<pair>
+  <displayed-value>Kinesiology &amp; Health Science</displayed-value>
+  <stored-value>Kinesiology &amp; Health Science</stored-value>
+</pair>
+<pair>
+  <displayed-value>Law</displayed-value>
+  <stored-value>Law</stored-value>
+</pair>
+<pair>
+  <displayed-value>Linguistics and Applied Linguistics (Applied Linguistics)</displayed-value>
+  <stored-value>Linguistics and Applied Linguistics (Applied Linguistics)</stored-value>
+</pair>
+<pair>
+  <displayed-value>Linguistics and Applied Linguistics (Theoretical Linguistics)</displayed-value>
+  <stored-value>Linguistics and Applied Linguistics (Theoretical Linguistics)</stored-value>
+</pair>
+<pair>
+  <displayed-value>Mathematics &amp; Statistics</displayed-value>
+  <stored-value>Mathematics &amp; Statistics</stored-value>
+</pair>
+<pair>
+  <displayed-value>Music</displayed-value>
+  <stored-value>Music</stored-value>
+</pair>
+<pair>
+  <displayed-value>Nursing</displayed-value>
+  <stored-value>Nursing</stored-value>
+</pair>
+<pair>
+  <displayed-value>Philosophy</displayed-value>
+  <stored-value>Philosophy</stored-value>
+</pair>
+<pair>
+  <displayed-value>Physics and Astronomy</displayed-value>
+  <stored-value>Physics and Astronomy</stored-value>
+</pair>
+<pair>
+  <displayed-value>Political Science</displayed-value>
+  <stored-value>Political Science</stored-value>
+</pair>
+<pair>
+  <displayed-value>Psychology (Functional Area: Brain, Behaviour &amp; Cognitive Science</displayed-value>
+  <stored-value>Psychology (Functional Area: Brain, Behaviour &amp; Cognitive Science</stored-value>
+</pair>
+<pair>
+  <displayed-value>Psychology (Functional Area: Clinical-Developmental)</displayed-value>
+  <stored-value>Psychology (Functional Area: Clinical-Developmental)</stored-value>
+</pair>
+<pair>
+  <displayed-value>Psychology (Functional Area: Clinical Psychology)</displayed-value>
+  <stored-value>Psychology (Functional Area: Clinical Psychology)</stored-value>
+</pair>
+<pair>
+  <displayed-value>Psychology (Functional Area: Developmental &amp; Cognitive Processes)</displayed-value>
+  <stored-value>Psychology (Functional Area: Developmental &amp; Cognitive Processes)</stored-value>
+</pair>
+<pair>
+  <displayed-value>Psychology (Functional Area: Developmental Science)</displayed-value>
+  <stored-value>Psychology (Functional Area: Developmental Science)</stored-value>
+</pair>
+<pair>
+  <displayed-value>Psychology (Functional Area: History and Theory)</displayed-value>
+  <stored-value>Psychology (Functional Area: History and Theory)</stored-value>
+</pair>
+<pair>
+  <displayed-value>Psychology (Functional Area: Quantitative Methods)</displayed-value>
+  <stored-value>Psychology (Functional Area: Quantitative Methods)</stored-value>
+</pair>
+<pair>
+  <displayed-value>Psychology (Functional Area: Social and Personality)</displayed-value>
+  <stored-value>Psychology (Functional Area: Social and Personality)</stored-value>
+</pair>
+<pair>
+  <displayed-value>Social Anthropology</displayed-value>
+  <stored-value>Social Anthropology</stored-value>
+</pair>
+<pair>
+  <displayed-value>Social &amp; Political Thought</displayed-value>
+  <stored-value>Social &amp; Political Thought</stored-value>
+</pair>
+<pair>
+  <displayed-value>Social Work</displayed-value>
+  <stored-value>Social Work</stored-value>
+</pair>
+<pair>
+  <displayed-value>Sociology</displayed-value>
+  <stored-value>Sociology</stored-value>
+</pair>
+<pair>
+  <displayed-value>Theatre and Performance Studies</displayed-value>
+  <stored-value>Theatre and Performance Studies</stored-value>
+</pair>
+<pair>
+  <displayed-value>Translation Studies</displayed-value>
+  <stored-value>Translation Studies</stored-value>
+</pair>
+<pair>
+  <displayed-value>Visual Arts</displayed-value>
+  <stored-value>Visual Arts</stored-value>
+</pair>
+<pair>
+  <displayed-value>Women's Studies</displayed-value>
+  <stored-value>Women's Studies</stored-value>
 </pair>
 </value-pairs>
 <value-pairs value-pairs-name="mrp_degree_level" dc-term="degree_level">

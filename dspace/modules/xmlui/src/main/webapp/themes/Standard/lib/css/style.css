@@ -1243,3 +1243,16 @@ table.table-metadata td.cell {
     width: 70%;
     text-align: left;
 }
+
+
+
+
+#impact-altmetric {
+    float: left;
+    margin: 20px 30px;
+    width: 65px;
+}
+#impact-plumx {
+    float: left;
+    margin-left: 150px;
+}

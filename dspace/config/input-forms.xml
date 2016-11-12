@@ -458,7 +458,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
 <repeatable>false</repeatable>
 <label>Date of document</label>
 <input-type>date</input-type>
-<hint>Please give the date listed on the title page of the ETD.</hint>
+<hint>Please give the date listed on the title page of the ETD. The Year is a required field.</hint>
 <required>You must enter at least the year.</required>
 </field>
 <field>
@@ -490,7 +490,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
 <repeatable>true</repeatable>
 <label>Subject Keywords</label>
 <input-type>twobox</input-type>
-<hint> Enter appropriate subject keywords or phrases below. </hint>
+<hint> Enter appropriate subject keywords or phrases below. Each keyword or phrase has to appear in a separate box. Click on the "Add" button to create new boxes as needed.</hint>
 <required></required>
 <vocabulary>srsc</vocabulary>
 </field>
@@ -509,9 +509,9 @@ Add a separate abstract for each langauage in which the abstract is available.</
   <dc-schema>dc</dc-schema>
   <dc-element>degree</dc-element>
   <dc-qualifier>name</dc-qualifier>
-  <repeatable>false</repeatable>
+  <repeatable>true</repeatable>
   <label>Degree Name</label>
-  <input-type value-pairs-name="etd_degree_name">dropdown</input-type>
+  <input-type value-pairs-name="etd_degree_name">qualdrop_value</input-type>
   <hint>Choose the appropriate degree name.</hint>
   <required></required>
 </field>
@@ -529,10 +529,10 @@ Add a separate abstract for each langauage in which the abstract is available.</
   <dc-schema>dc</dc-schema>
   <dc-element>degree</dc-element>
   <dc-qualifier>discipline</dc-qualifier>
-  <repeatable>false</repeatable>
-  <label>Degree Discipline</label>
-  <input-type value-pairs-name="etd_degree_discipline">dropdown</input-type>
-  <hint>Choose the appropriate degree discipline.</hint>
+  <repeatable>true</repeatable>
+  <label>Program Name</label>
+  <input-type value-pairs-name="etd_degree_discipline">qualdrop_value</input-type>
+  <hint>Choose the appropriate Program Name. Refer to FGS controlled vocabulary for additional program names.</hint>
   <required></required>
 </field>
 <field>
@@ -1282,16 +1282,16 @@ If the item is not archival in nature, please enter a link to the item in VuFind
      -->
 <value-pairs value-pairs-name="common_iso_languages" dc-term="language_iso">
 <pair>
+<displayed-value>English</displayed-value>
+<stored-value>en</stored-value>
+</pair>
+<pair>
 <displayed-value>N/A</displayed-value>
 <stored-value></stored-value>
 </pair>
 <pair>
 <displayed-value>English (United States)</displayed-value>
 <stored-value>en_US</stored-value>
-</pair>
-<pair>
-<displayed-value>English</displayed-value>
-<stored-value>en</stored-value>
 </pair>
 <pair>
 <displayed-value>Spanish</displayed-value>
@@ -1334,6 +1334,10 @@ If the item is not archival in nature, please enter a link to the item in VuFind
 </value-pairs>
 <value-pairs value-pairs-name="etd_degree_name" dc-term="degree_name">
 <pair>
+  <displayed-value></displayed-value>
+  <stored-value></stored-value>
+</pair>
+<pair>
   <displayed-value>LLM - Master of Laws</displayed-value>
   <stored-value>LLM - Master of Laws</stored-value>
 </pair>
@@ -1375,6 +1379,10 @@ If the item is not archival in nature, please enter a link to the item in VuFind
 </pair>
 </value-pairs>
 <value-pairs value-pairs-name="etd_degree_discipline" dc-term="degree_discipline">
+<pair>
+  <displayed-value></displayed-value>
+  <stored-value></stored-value>
+</pair>
 <pair>
   <displayed-value>Administration</displayed-value>
   <stored-value>Administration</stored-value>

@@ -511,7 +511,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
   <dc-qualifier>name</dc-qualifier>
   <repeatable>true</repeatable>
   <label>Degree Name</label>
-  <input-type value-pairs-name="etd_degree_name">qualdrop_value</input-type>
+  <input-type value-pairs-name="etd_degree_name">dropdown/input-type>
   <hint>Choose the appropriate degree name.</hint>
   <required></required>
 </field>
@@ -531,7 +531,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
   <dc-qualifier>discipline</dc-qualifier>
   <repeatable>true</repeatable>
   <label>Program Name</label>
-  <input-type value-pairs-name="etd_degree_discipline">qualdrop_value</input-type>
+  <input-type value-pairs-name="etd_degree_discipline">dropdown</input-type>
   <hint>Choose the appropriate Program Name. Refer to FGS controlled vocabulary for additional program names.</hint>
   <required></required>
 </field>

@@ -18,6 +18,64 @@
  <!-- for handle "default".                                                -->
  <submission-map>
    <name-map collection-handle="default" submission-name="traditional" />
+   <!-- ycar -->
+   <name-map collection-handle="10315/31580" submission-name="noCC" />
+   <name-map collection-handle="10315/31579" submission-name="noCC" />
+   <name-map collection-handle="10315/31635" submission-name="noCC" />
+   <name-map collection-handle="10315/27659" submission-name="noCC"/>
+<name-map collection-handle="10315/30810" submission-name="noCC"/>
+<name-map collection-handle="10315/27637" submission-name="noCC"/>
+<name-map collection-handle="10315/27613" submission-name="noCC"/>
+<name-map collection-handle="10315/26546" submission-name="noCC"/>
+<name-map collection-handle="10315/30847" submission-name="noCC"/>
+<name-map collection-handle="10315/27559" submission-name="noCC"/>
+<name-map collection-handle="10315/30135" submission-name="noCC"/>
+<name-map collection-handle="10315/28572" submission-name="noCC"/>
+<name-map collection-handle="10315/28600" submission-name="noCC"/>
+<name-map collection-handle="10315/27682" submission-name="noCC"/>
+<name-map collection-handle="10315/27616" submission-name="noCC"/>
+<name-map collection-handle="10315/27709" submission-name="noCC"/>
+<name-map collection-handle="10315/28601" submission-name="noCC"/>
+<name-map collection-handle="10315/27626" submission-name="noCC"/>
+<name-map collection-handle="10315/28604" submission-name="noCC"/>
+<name-map collection-handle="10315/26544" submission-name="noCC"/>
+<name-map collection-handle="10315/27584" submission-name="noCC"/>
+<name-map collection-handle="10315/26311" submission-name="noCC"/>
+<name-map collection-handle="10315/28580" submission-name="noCC"/>
+<name-map collection-handle="10315/26545" submission-name="noCC"/>
+<name-map collection-handle="10315/27574" submission-name="noCC"/>
+<name-map collection-handle="10315/30328" submission-name="noCC"/>
+<name-map collection-handle="10315/27577" submission-name="noCC"/>
+<name-map collection-handle="10315/27599" submission-name="noCC"/>
+<name-map collection-handle="10315/30834" submission-name="noCC"/>
+<name-map collection-handle="10315/27588" submission-name="noCC"/>
+<name-map collection-handle="10315/27606" submission-name="noCC"/>
+<name-map collection-handle="10315/27572" submission-name="noCC"/>
+<name-map collection-handle="10315/26547" submission-name="noCC"/>
+<name-map collection-handle="10315/28605" submission-name="noCC"/>
+<name-map collection-handle="10315/30817" submission-name="noCC"/>
+<name-map collection-handle="10315/27569" submission-name="noCC"/>
+<name-map collection-handle="10315/26542" submission-name="noCC"/>
+<name-map collection-handle="10315/28619" submission-name="noCC"/>
+<name-map collection-handle="10315/27641" submission-name="noCC"/>
+<name-map collection-handle="10315/28582" submission-name="noCC"/>
+<name-map collection-handle="10315/26548" submission-name="noCC"/>
+<name-map collection-handle="10315/28606" submission-name="noCC"/>
+<name-map collection-handle="10315/27657" submission-name="noCC"/>
+<name-map collection-handle="10315/26543" submission-name="noCC"/>
+<name-map collection-handle="10315/26549" submission-name="noCC"/>
+<name-map collection-handle="10315/30365" submission-name="noCC"/>
+<name-map collection-handle="10315/27610" submission-name="noCC"/>
+<name-map collection-handle="10315/30363" submission-name="noCC"/>
+<name-map collection-handle="10315/27562" submission-name="noCC"/>
+<name-map collection-handle="10315/27675" submission-name="noCC"/>
+<name-map collection-handle="10315/27596" submission-name="noCC"/>
+<name-map collection-handle="10315/28581" submission-name="noCC"/>
+<name-map collection-handle="10315/27586" submission-name="noCC"/>
+<name-map collection-handle="10315/27647" submission-name="noCC"/>
+<name-map collection-handle="10315/27663" submission-name="noCC"/>
+<name-map collection-handle="10315/27620" submission-name="noCC"/>
+<name-map collection-handle="10315/27593" submission-name="noCC"/>
  </submission-map>
 
 
@@ -228,6 +286,53 @@
 		<workflow-editable>false</workflow-editable>
       </step>
       
+
+      <!--Step 6 will be to Sign off on the License-->
+      <step>
+        <heading>submit.progressbar.license</heading>
+        <processing-class>org.dspace.submit.step.LicenseStep</processing-class>
+        <jspui-binding>org.dspace.app.webui.submit.step.JSPLicenseStep</jspui-binding>
+		<xmlui-binding>org.dspace.app.xmlui.aspect.submission.submit.LicenseStep</xmlui-binding>
+		<workflow-editable>false</workflow-editable>
+      </step>
+
+
+     
+   </submission-process>
+   
+   <submission-process name="noCC">
+     
+	<step>
+		<processing-class>org.dspace.submit.step.SkipInitialQuestionsStep</processing-class>
+	</step>
+    
+      
+      <!--Step 2 will be to Describe the item.-->
+      <step>
+        <heading>submit.progressbar.describe</heading>
+        <processing-class>org.dspace.submit.step.DescribeStep</processing-class>
+        <jspui-binding>org.dspace.app.webui.submit.step.JSPDescribeStep</jspui-binding>
+		<xmlui-binding>org.dspace.app.xmlui.aspect.submission.submit.DescribeStep</xmlui-binding>
+        <workflow-editable>true</workflow-editable>
+      </step>
+          
+      <!--Step 3 will be to Upload the item-->
+      <step>
+        <heading>submit.progressbar.upload</heading>
+        <processing-class>org.dspace.submit.step.UploadStep</processing-class>
+        <jspui-binding>org.dspace.app.webui.submit.step.JSPUploadStep</jspui-binding>
+		<xmlui-binding>org.dspace.app.xmlui.aspect.submission.submit.UploadStep</xmlui-binding>
+        <workflow-editable>true</workflow-editable>
+      </step>
+     
+ 	  <!--Step 4 will be to Verify/Review everything -->
+ 	  <step>
+        <heading>submit.progressbar.verify</heading>
+        <processing-class>org.dspace.submit.step.VerifyStep</processing-class>
+ 	    <jspui-binding>org.dspace.app.webui.submit.step.JSPVerifyStep</jspui-binding>
+		<xmlui-binding>org.dspace.app.xmlui.aspect.submission.submit.ReviewStep</xmlui-binding>
+		<workflow-editable>true</workflow-editable>
+      </step>
 
       <!--Step 6 will be to Sign off on the License-->
       <step>

@@ -71,6 +71,10 @@
 <name-map collection-handle="10315/27663" form-name="etd"/>
 <name-map collection-handle="10315/27620" form-name="etd"/>
 <name-map collection-handle="10315/27593" form-name="etd"/>
+
+<name-map collection-handle="10315/31580" form-name="ycar"/>
+<name-map collection-handle="10315/31579" form-name="ycar"/>
+<name-map collection-handle="10315/31635" form-name="ycar"/>
 <!-- Administration -->
 </form-map>
 <!-- The form-definitions map lays out the detailed definition of all the -->
@@ -88,6 +92,20 @@
 <!-- an input-type. Each field also may hold optional elements: DC        -->
 <!-- qualifier name, a repeatable flag, and a text string whose presence  -->
 <!-- serves as a 'this field is required' flag.                           -->
+<!-- blank field
+
+    <field>
+      <dc-schema>dc</dc-schema>
+      <dc-element></dc-element>
+      <dc-qualifier></dc-qualifier>
+      <repeatable>true</repeatable>
+      <label></label>
+      <input-type></input-type>
+      <hint></hint>
+      <required></required>
+    </field>
+-->
+
 <form-definitions>
 <!-- IOCS!!!  -->
 <form name="icos">
@@ -418,6 +436,91 @@ Add a separate abstract for each langauage in which the abstract is available.</
 </field>
 </page>
 </form>
+<!-- YCAR -->
+<form name="ycar">
+  <page number="1">
+    <field>
+      <dc-schema>dc</dc-schema>
+      <dc-element>contributor</dc-element>
+      <dc-qualifier>author</dc-qualifier>
+      <repeatable>true</repeatable>
+      <label>Author</label>
+      <input-type>name</input-type>
+      <hint>Put the primary scholar's name and click to add any additional contributors.</hint>
+      <required></required>
+    </field>
+    <field>
+      <dc-schema>dc</dc-schema>
+      <dc-element>date</dc-element>
+      <dc-qualifier>issued</dc-qualifier>
+      <repeatable>false</repeatable>
+      <label>Date</label>
+      <input-type>date</input-type>
+      <hint>Enter the date.</hint>
+      <required></required>
+    </field>
+    <field>
+      <dc-schema>dc</dc-schema>
+      <dc-element>title</dc-element>
+      <dc-qualifier></dc-qualifier>
+      <repeatable>false</repeatable>
+      <label>Title</label>
+      <input-type>onebox</input-type>
+      <hint>Enter the title of the item.</hint>
+      <required></required>
+    </field>
+    <field>
+      <dc-schema>dc</dc-schema>
+      <dc-element>description</dc-element>
+      <dc-qualifier>abstract</dc-qualifier>
+      <repeatable>false</repeatable>
+      <label>Abstract</label>
+      <input-type>textarea</input-type>
+      <hint>Enter the abstract if the item has one.</hint>
+      <required></required>
+    </field>
+    <field>
+      <dc-schema>dc</dc-schema>
+      <dc-element>identifier</dc-element>
+      <dc-qualifier>citation</dc-qualifier>
+      <repeatable>false</repeatable>
+      <label>Citation</label>
+      <input-type>textarea</input-type>
+      <hint>Enter the item's citation details.</hint>
+      <required></required>
+    </field>
+    <field>
+      <dc-schema>dc</dc-schema>
+      <dc-element>subject</dc-element>
+      <dc-qualifier>keywords</dc-qualifier>
+      <repeatable>true</repeatable>
+      <label>Keywords</label>
+      <input-type>onebox</input-type>
+      <hint>Enter relevant key words for the item.</hint>
+      <required></required>
+    </field>
+    <field>
+      <dc-schema>dc</dc-schema>
+      <dc-element>type</dc-element>
+      <dc-qualifier></dc-qualifier>
+      <repeatable>false</repeatable>
+      <label>Language</label>
+      <input-type value-pairs-name="ycar_type">dropdown</input-type>
+<hint>Select the appropriate type for the item.</hint>
+      <required></required>
+    </field>
+    <field>
+      <dc-schema>dc</dc-schema>
+      <dc-element>language</dc-element>
+      <dc-qualifier>iso</dc-qualifier>
+      <repeatable>false</repeatable>
+      <label>Language</label>
+      <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+<hint>Select the language of the main content of the item.  If the language does not appear in the list below, please select 'Other'.  If the content does not really have a language (for example, if it is a dataset or an image) please select 'N/A'.</hint>
+      <required></required>
+    </field>
+  </page>
+</form>
 <!-- ETDs -->
 <form name="etd">
 <page number="1">
@@ -454,7 +557,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
 <field>
 <dc-schema>dc</dc-schema>
 <dc-element>date</dc-element>
-<dc-qualifier>copyright</dc-qualifier>
+<dc-qualifier>issued</dc-qualifier>
 <repeatable>false</repeatable>
 <label>Date of document</label>
 <input-type>date</input-type>
@@ -511,7 +614,7 @@ Add a separate abstract for each langauage in which the abstract is available.</
   <dc-qualifier>name</dc-qualifier>
   <repeatable>true</repeatable>
   <label>Degree Name</label>
-  <input-type value-pairs-name="etd_degree_name">dropdown/input-type>
+  <input-type value-pairs-name="etd_degree_name">dropdown</input-type>
   <hint>Choose the appropriate degree name.</hint>
   <required></required>
 </field>
@@ -1330,6 +1433,20 @@ If the item is not archival in nature, please enter a link to the item in VuFind
 <pair>
   <displayed-value>Master's</displayed-value>
   <stored-value>Master's</stored-value>
+</pair>
+</value-pairs>
+<value-pairs value-pairs-name="ycar_type" dc-term="type">
+<pair>
+  <displayed-value>Asia Research Brief</displayed-value>
+  <stored-value>Asia Research Brief</stored-value>
+</pair>
+<pair>
+  <displayed-value>Asia Colloquia Papers</displayed-value>
+  <stored-value>Asia Colloquia Papers</stored-value>
+</pair>
+<pair>
+  <displayed-value>New Voices in Asian Research</displayed-value>
+  <stored-value>New Voices in Asian Research</stored-value>
 </pair>
 </value-pairs>
 <value-pairs value-pairs-name="etd_degree_name" dc-term="degree_name">

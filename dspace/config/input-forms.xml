@@ -124,7 +124,7 @@
 <dc-schema>dc</dc-schema>
 <dc-element>title</dc-element>
 <dc-qualifier></dc-qualifier>
-<repeatable>false</repeatable>
+<repeatable>true</repeatable>
 <label>Title</label>
 <input-type>textarea</input-type>
 <hint>Enter the main title of the item.</hint>
@@ -293,6 +293,17 @@ Add a separate abstract for each langauage in which the abstract is available.</
 <label>Publisher</label>
 <input-type>onebox</input-type>
 <hint>Enter the name of the publisher of the previously issued instance of this item.</hint>
+<required></required>
+</field>
+<field>
+<dc-schema>dc</dc-schema>
+<dc-element>identifier</dc-element>
+<dc-qualifier>uri</dc-qualifier>
+<repeatable>false</repeatable>
+<label>Digital Object Identifier [DOI]</label>
+<input-type>onebox</input-type>
+<hint>Entering a DOI will enable you to see alternative metrics for your article. To search for a DOI for your article, visit http://search.crossref.org/
+DOIs must be entered in their longer form version (i.e. http://dx.doi.org/10.3389/fpsyt.2015.00047) to see altmetrics data.</hint>
 <required></required>
 </field>
 <field>
@@ -612,10 +623,10 @@ Add a separate abstract for each langauage in which the abstract is available.</
   <dc-schema>dc</dc-schema>
   <dc-element>degree</dc-element>
   <dc-qualifier>name</dc-qualifier>
-  <repeatable>true</repeatable>
+  <repeatable>false</repeatable>
   <label>Degree Name</label>
   <input-type value-pairs-name="etd_degree_name">dropdown</input-type>
-  <hint>Choose the appropriate degree name.</hint>
+  <hint>Choose the appropriate degree name. Please contact diginit@yorku.ca to add additional degree names. </hint>
   <required></required>
 </field>
 <field>
@@ -632,10 +643,10 @@ Add a separate abstract for each langauage in which the abstract is available.</
   <dc-schema>dc</dc-schema>
   <dc-element>degree</dc-element>
   <dc-qualifier>discipline</dc-qualifier>
-  <repeatable>true</repeatable>
+  <repeatable>false</repeatable>
   <label>Program Name</label>
   <input-type value-pairs-name="etd_degree_discipline">dropdown</input-type>
-  <hint>Choose the appropriate Program Name. Refer to FGS controlled vocabulary for additional program names.</hint>
+  <hint>Choose the appropriate Program Name. Refer to FGS controlled vocabulary for additional program names. Please contact diginit@yorku.ca to add additional degree names. </hint>
   <required></required>
 </field>
 <field>

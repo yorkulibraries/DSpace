@@ -1922,7 +1922,7 @@ If the item is not archival in nature, please enter a link to the item in VuFind
 <stored-value>Major Research Paper</stored-value>
 </pair>
 </value-pairs>
-<value-pairs value-pairs-name="mes_type" dc-term="type">
+<value-pairs value-pairs-name="mes_types" dc-term="type">
 <pair>
   <displayed-value>Major project</displayed-value>
   <stored-value>Major project</stored-value>
